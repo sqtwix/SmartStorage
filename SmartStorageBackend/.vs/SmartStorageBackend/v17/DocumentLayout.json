@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\smartstorage\\smartstoragebackend\\smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\smartstorage\\smartstoragebackend\\smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +46,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
+              "RelativeDocumentMoniker": "SmartStorageTests\\AuthControllerTests.cs",
+              "ToolTip": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
+              "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T17:35:29.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwBMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T17:03:20.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Program.cs",
@@ -51,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
               "RelativeDocumentMoniker": "SmartStorageBackend\\appsettings.json",
@@ -64,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SmartStorageContext.cs",
               "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageContext.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\SmartStorageContext.cs",
@@ -77,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\UserDTO.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\UserDTO.cs",
@@ -90,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\User.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\User.cs",

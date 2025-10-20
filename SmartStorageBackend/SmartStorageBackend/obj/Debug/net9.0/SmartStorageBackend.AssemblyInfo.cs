@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartStorageBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8988f40a5ae1a5aa9d5e5260295d97f807a760f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca624c0f2aaccacf958f317c25fc8091f2a75cf5")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartStorageBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartStorageBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
