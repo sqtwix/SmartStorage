@@ -28,6 +28,46 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 		return { x, y }
 	}
 
+	const getTooltipPlacement = (robot: Robot) => {
+		const pos = getRobotPosition(robot)
+		// Определяем, с какой стороны показывать тултип
+		// чтобы он не выходил за границы карты
+		
+		let x = 0
+		let y = 0
+		let placement = 'top' // top, bottom, left, right
+		
+		// Проверяем границы по X (0-2000)
+		if (pos.x < 300) {
+			// Робот слева - показываем справа
+			placement = 'right'
+			x = 45
+			y = -45
+		} else if (pos.x > 1700) {
+			// Робот справа - показываем слева
+			placement = 'left'
+			x = -315
+			y = -45
+		} else if (pos.y < 150) {
+			// Робот сверху - показываем снизу
+			placement = 'bottom'
+			x = -120
+			y = 40
+		} else if (pos.y > 450) {
+			// Робот снизу - показываем сверху
+			placement = 'top'
+			x = -120
+			y = -165
+		} else {
+			// По умолчанию сверху
+			placement = 'top'
+			x = -120
+			y = -165
+		}
+		
+		return { x, y, placement }
+	}
+
 	return (
 		<div className="warehouse-map">
 			<div className="warehouse-map-header">
@@ -74,6 +114,8 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 					{robots.map((robot) => {
 						const pos = getRobotPosition(robot)
 						const color = getRobotStatusColor(robot.status)
+						const isHovered = hoveredRobot === robot.id
+						const tooltipPlacement = getTooltipPlacement(robot)
 
 						return (
 							<g
@@ -83,24 +125,28 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 								onMouseLeave={() => setHoveredRobot(null)}
 								className="robot-marker"
 							>
-								<circle cx={19} cy={14} r={12} fill={color} />
+								<circle cx={19} cy={14} r={20} fill={color} />
 								<text x={19} y={18} textAnchor="middle" className="robot-label">
 									{robot.id.split('-')[1]}
 								</text>
 
-								{hoveredRobot === robot.id && (
-									<g>
-										<rect x={-60} y={-50} width={160} height={80} fill="white" stroke="#ccc" rx={4} />
-										<text x={20} y={-30} className="robot-tooltip-text">
-											ID: {robot.id}
-										</text>
-										<text x={20} y={-10} className="robot-tooltip-text">
-											Батарея: {robot.battery_level}%
-										</text>
-										<text x={20} y={10} className="robot-tooltip-text">
-											Обновлено: {new Date(robot.last_update).toLocaleTimeString('ru')}
-										</text>
-									</g>
+								{/* Tooltip using foreignObject */}
+								{isHovered && (
+									<foreignObject
+										x={tooltipPlacement.x}
+										y={tooltipPlacement.y}
+										width={300}
+										height={150}
+										style={{ overflow: 'visible' }}
+									>
+										<div className={`robot-tooltip robot-tooltip-${tooltipPlacement.placement}`}>
+											<div className="robot-tooltip-content">
+												<div>ID: {robot.id}</div>
+												<div>Батарея: {robot.battery_level}%</div>
+												<div>Обновлено: {new Date(robot.last_update).toLocaleTimeString('ru')}</div>
+											</div>
+										</div>
+									</foreignObject>
 								)}
 							</g>
 						)
