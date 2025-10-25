@@ -1,0 +1,2 @@
+export { RecentScans } from './RecentScans'
+

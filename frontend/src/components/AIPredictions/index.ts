@@ -1,0 +1,2 @@
+export { AIPredictions } from './AIPredictions'
+

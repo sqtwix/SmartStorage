@@ -1,0 +1,48 @@
+.ws-indicator {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	background: white;
+	border-radius: 24px;
+	padding: 8px 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	z-index: 1000;
+}
+
+.ws-indicator-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+.ws-indicator-text {
+	font-size: 12px;
+	font-weight: 600;
+	color: #666;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+@media (max-width: 768px) {
+	.ws-indicator {
+		bottom: 16px;
+		right: 16px;
+	}
+
+	.ws-indicator-text {
+		display: none;
+	}
+}
+

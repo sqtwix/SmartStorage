@@ -1,0 +1,39 @@
+.badge {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.badge-ok {
+	background: #e8f5e9;
+	color: #2e7d32;
+}
+
+.badge-low_stock {
+	background: #fff3e0;
+	color: #e65100;
+}
+
+.badge-critical {
+	background: #ffebee;
+	color: #c62828;
+}
+
+.badge-active {
+	background: #e8f5e9;
+	color: #2e7d32;
+}
+
+.badge-low_battery {
+	background: #fff3e0;
+	color: #e65100;
+}
+
+.badge-offline {
+	background: #ffebee;
+	color: #c62828;
+}
+

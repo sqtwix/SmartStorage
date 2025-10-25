@@ -1,0 +1,2 @@
+export { WarehouseMap } from './WarehouseMap'
+
