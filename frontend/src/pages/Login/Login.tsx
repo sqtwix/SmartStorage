@@ -35,19 +35,7 @@ export const Login = () => {
 		setLoading(true)
 
 		try {
-			// TODO: когда будет готов бэкенд, заменить на реальный запрос
-			// const response = await authApi.login({ email, password })
-			const response = {
-				token: '1234567890',
-				user: {
-					id: 1,
-					name: 'John Doe',
-					email: 'john.doe@example.com',
-					role: 'operator' as const,
-	// role: 'admin' as const
-	// role: 'viewer' as const
-},
-			}
+			const response = await authApi.login({ email, password })
 			authApi.saveAuth(response.token, response.user)
 
 			if (rememberMe) {
