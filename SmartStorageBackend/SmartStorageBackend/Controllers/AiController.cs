@@ -18,15 +18,21 @@ namespace SmartStorageBackend.Controllers
             _http = httpFactory.CreateClient();
         }
 
-        [HttpPost]
+        [HttpPost("predict")]
         public async Task<IActionResult> Predict([FromBody] AiPredictRequest request)
         {
             var responce = await _http.PostAsJsonAsync("http://localhost:8000/predict", request);
+
             if (!responce.IsSuccessStatusCode) {
                 return StatusCode(500, "Ai сервис не работает!");
             }
 
             var result = await responce.Content.ReadFromJsonAsync<AiPredictResponse>();
+
+            if (result == null)
+            {
+                return StatusCode(500, "Ошибка при обработке ответа от AI сервиса");
+            }
 
             foreach (var p in result!.Predictions)
             {
@@ -41,7 +47,7 @@ namespace SmartStorageBackend.Controllers
             }
 
             await _db.SaveChangesAsync();
-            return Ok(responce);
+            return Ok(result);
         }
 
     }
