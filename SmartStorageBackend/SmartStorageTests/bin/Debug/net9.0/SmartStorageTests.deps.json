@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v9.0": {
       "SmartStorageTests/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "9.0.10",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.10",
           "Microsoft.NET.Test.Sdk": "17.12.0",
+          "Moq": "4.20.72",
           "SmartStorageBackend": "1.0.0",
           "coverlet.collector": "6.0.2",
           "xunit": "2.9.2",
@@ -26,6 +29,17 @@
           }
         }
       },
+      "Castle.Core/5.1.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.0"
+          }
+        }
+      },
       "coverlet.collector/6.0.2": {},
       "Microsoft.AspNetCore.Authentication.JwtBearer/9.0.10": {
         "dependencies": {
@@ -38,6 +52,17 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Connections.Abstractions/9.0.10": {
+        "dependencies": {
+          "Microsoft.Extensions.Features": "9.0.10"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47517"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/9.0.10": {
         "dependencies": {
           "Microsoft.OpenApi": "1.6.17"
@@ -45,6 +70,29 @@
         "runtime": {
           "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
             "assemblyVersion": "9.0.10.0",
+            "fileVersion": "9.0.1025.47517"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Common/9.0.10": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "9.0.10",
+          "Microsoft.Extensions.Options": "9.0.10"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.SignalR.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47517"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Protocols.Json/9.0.10": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "9.0.10"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1025.47517"
           }
         }
@@ -80,6 +128,19 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/9.0.10": {},
+      "Microsoft.EntityFrameworkCore.InMemory/9.0.10": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.10",
+          "Microsoft.Extensions.Caching.Memory": "9.0.10",
+          "Microsoft.Extensions.Logging": "9.0.10"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "9.0.10.0",
+            "fileVersion": "9.0.1025.47514"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/9.0.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.10",
@@ -147,6 +208,14 @@
           "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1025.47515"
+          }
+        }
+      },
+      "Microsoft.Extensions.Features/9.0.10": {
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Features.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47517"
           }
         }
       },
@@ -518,6 +587,17 @@
           }
         }
       },
+      "Moq/4.20.72": {
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {
+            "assemblyVersion": "4.20.72.0",
+            "fileVersion": "4.20.72.0"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -550,6 +630,7 @@
           }
         }
       },
+      "System.Diagnostics.EventLog/6.0.0": {},
       "System.IdentityModel.Tokens.Jwt/8.0.1": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.0.1",
@@ -621,7 +702,11 @@
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.10",
           "Microsoft.AspNetCore.OpenApi": "9.0.10",
+          "Microsoft.AspNetCore.SignalR.Common": "9.0.10",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "9.0.10",
           "Microsoft.EntityFrameworkCore": "9.0.10",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.10",
+          "Moq": "4.20.72",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
         },
         "runtime": {
@@ -646,6 +731,13 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
+    "Castle.Core/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "path": "castle.core/5.1.1",
+      "hashPath": "castle.core.5.1.1.nupkg.sha512"
+    },
     "coverlet.collector/6.0.2": {
       "type": "package",
       "serviceable": true,
@@ -660,12 +752,33 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/9.0.10",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.9.0.10.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Connections.Abstractions/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z0sD3sBAgWNZ0omLYUvEO5vmec5NV7tvfMBfrhByRfLd7YLkzGxOZN/KvEWzH4Ifg6dBcHLZ+4cbJoFJHXrUUA==",
+      "path": "microsoft.aspnetcore.connections.abstractions/9.0.10",
+      "hashPath": "microsoft.aspnetcore.connections.abstractions.9.0.10.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.OpenApi/9.0.10": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yAv5EDEi0Nkk75Vhxh6ppuXd/QIO8hzjGpAt/fGInMZWIX/mVwZ1IM50YFIWeLCVM8KDj0oFPQdcLeQ+9hEJsw==",
       "path": "microsoft.aspnetcore.openapi/9.0.10",
       "hashPath": "microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Common/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jwoS5gG0GNwSXX8Fyn7m1sEUzeH/W9q8wqAJs4v2a6ffKBnqjcG4YiiPZDyN7UhJCWAjeU2low+XjJ3YfN7iHQ==",
+      "path": "microsoft.aspnetcore.signalr.common/9.0.10",
+      "hashPath": "microsoft.aspnetcore.signalr.common.9.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Protocols.Json/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AhBUSG98Us2LLW3FjhtAaa6x0zL1jyjjYYZ0CSCoi9fmIuOLl/5WxXOP48VsrChi6NpZ3C31yHpScl4vqLdPcA==",
+      "path": "microsoft.aspnetcore.signalr.protocols.json/9.0.10",
+      "hashPath": "microsoft.aspnetcore.signalr.protocols.json.9.0.10.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.12.0": {
       "type": "package",
@@ -694,6 +807,13 @@
       "sha512": "sha512-mXNl0Gg3l3zGrClLCHepB+b7rYVuFfB9qQJwya0dUSHFuR1T0jMD8KxuNVyhQSfoWIepanhzjcG8TUNGXOcU0Q==",
       "path": "microsoft.entityframeworkcore.analyzers/9.0.10",
       "hashPath": "microsoft.entityframeworkcore.analyzers.9.0.10.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fRnQ7qcHNINRoErantws9k3CdjcYwvbx+fLB3ZDN/EDC7kt93J3fPB15aEbnum2JiFPbw3fgr9iOGWyxaRXD9Q==",
+      "path": "microsoft.entityframeworkcore.inmemory/9.0.10",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.9.0.10.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/9.0.1": {
       "type": "package",
@@ -736,6 +856,13 @@
       "sha512": "sha512-r9waLiOPe9ZF1PvzUT+RDoHvpMmY8MW+lb4lqjYGObwKpnyPMLI3odVvlmshwuZcdoHynsGWOrCPA0hxZ63lIA==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.10",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.10.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Features/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/94E6QLu+0jOWRzcaq80a0/7EmOzuwDWDNOyVYezMTeX4BzhXCfAsUrZi9Lg+4VP2J+21sTa+AaCgMdXiG/cpw==",
+      "path": "microsoft.extensions.features/9.0.10",
+      "hashPath": "microsoft.extensions.features.9.0.10.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/9.0.10": {
       "type": "package",
@@ -835,6 +962,13 @@
       "path": "microsoft.testplatform.testhost/17.12.0",
       "hashPath": "microsoft.testplatform.testhost.17.12.0.nupkg.sha512"
     },
+    "Moq/4.20.72": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EA55cjyNn8eTNWrgrdZJH5QLFp2L43oxl1tlkoYUKIE9pRwL784OWiTXeCV5ApS+AMYEAlt7Fo03A2XfouvHmQ==",
+      "path": "moq/4.20.72",
+      "hashPath": "moq.4.20.72.nupkg.sha512"
+    },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",
       "serviceable": true,
@@ -855,6 +989,13 @@
       "sha512": "sha512-mw5vcY2IEc7L+IeGrxpp/J5OSnCcjkjAgJYCm/eD52wpZze8zsSifdqV7zXslSMmfJG2iIUGZyo3KuDtEFKwMQ==",
       "path": "npgsql.entityframeworkcore.postgresql/9.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/8.0.1": {
       "type": "package",

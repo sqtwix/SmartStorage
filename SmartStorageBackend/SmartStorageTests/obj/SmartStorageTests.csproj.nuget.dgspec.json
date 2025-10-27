@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj": {}
+    "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj": {
+    "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
+        "projectUniqueName": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
         "projectName": "SmartStorageBackend",
-        "projectPath": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
-        "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\obj\\",
+        "projectPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
+        "packagesPath": "C:\\Users\\ivan2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ivan2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,6 +59,14 @@
               "target": "Package",
               "version": "[9.0.10, )"
             },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Protocols.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.10, )"
@@ -72,6 +76,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -101,21 +113,17 @@
         }
       }
     },
-    "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj": {
+    "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj",
+        "projectUniqueName": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj",
         "projectName": "SmartStorageTests",
-        "projectPath": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj",
-        "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\obj\\",
+        "projectPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\SmartStorageTests.csproj",
+        "packagesPath": "C:\\Users\\ivan2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ivan2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,8 +138,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj": {
-                "projectPath": "C:\\Users\\Пользователь\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj"
+              "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj": {
+                "projectPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj"
               }
             }
           }
@@ -152,9 +160,21 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Protocols.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.12.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
             },
             "coverlet.collector": {
               "target": "Package",

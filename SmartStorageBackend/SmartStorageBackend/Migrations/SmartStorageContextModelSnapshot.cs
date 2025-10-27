@@ -22,6 +22,159 @@ namespace SmartStorageBackend.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("SmartStorageBackend.Models.AiPrediction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal?>("ConfidenceScore")
+                        .HasColumnType("decimal(3,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("DaysUntilStockout")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("PredictionDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int?>("RecommendedOrder")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("AiPredictions");
+                });
+
+            modelBuilder.Entity("SmartStorageBackend.Models.InventoryHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ProductId")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("RobotId")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int?>("RowNumber")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ScannedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("ShelfNumber")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Zone")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("idx_inventory_product");
+
+                    b.HasIndex("RobotId");
+
+                    b.HasIndex("ScannedAt")
+                        .HasDatabaseName("idx_inventory_scanned");
+
+                    b.HasIndex("Zone")
+                        .HasDatabaseName("idx_inventory_zone");
+
+                    b.ToTable("InventoryHistory");
+                });
+
+            modelBuilder.Entity("SmartStorageBackend.Models.Product", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("Min_stock")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<int>("Optimal_stock")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("SmartStorageBackend.Models.Robot", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int>("BatteryLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CurrentRow")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CurrentShelf")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CurrentZone")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<DateTime>("LastUpdate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Robots");
+                });
+
             modelBuilder.Entity("SmartStorageBackend.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -51,7 +204,38 @@ namespace SmartStorageBackend.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SmartStorageBackend.Models.AiPrediction", b =>
+                {
+                    b.HasOne("SmartStorageBackend.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("SmartStorageBackend.Models.InventoryHistory", b =>
+                {
+                    b.HasOne("SmartStorageBackend.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SmartStorageBackend.Models.Robot", "Robot")
+                        .WithMany()
+                        .HasForeignKey("RobotId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Robot");
                 });
 #pragma warning restore 612, 618
         }
