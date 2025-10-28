@@ -5,6 +5,7 @@ using SmartStorageBackend.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using CsvHelper;
+using CsvHelper.Configuration;
 
 namespace SmartStorageBackend.Controllers
 {
@@ -83,62 +84,88 @@ namespace SmartStorageBackend.Controllers
         }
 
         [HttpPost("import")]
-        [RequestSizeLimit(15_000_000)] // максимум 15 МБ
-        public async Task<IActionResult> ImportCSV(IFormFile file)
+        [RequestSizeLimit(15_000_000)] // Максимальный размер файла - 15 мб
+       public async Task<IActionResult> ImportCSV(IFormFile file)
         {
             if (file == null || file.Length == 0)
-            {
-                return BadRequest(new { message = "Файл не загружен." });
-            }
+                return BadRequest(new { message = "Файл не был загружен." });
 
-            //  Инициализация данных для ответа
-            var successCount = 0;
-            var failedCount = 0;
+            int successCount = 0;
+            int failedCount = 0;
             var errors = new List<string>();
 
-            // Считывание файла
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = ";", // Разделитель
+                HasHeaderRecord = true,
+                MissingFieldFound = null, // игнорируем пустые поля
+                BadDataFound = null
+            };
+
+            // Чтение файла
             using (var stream = file.OpenReadStream())
             using (var reader = new StreamReader(stream))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvReader(reader, config))
             {
                 try
                 {
+                    csv.Context.RegisterClassMap<InventoryCsvRowMap>(); 
                     var records = csv.GetRecords<InventoryCsvRow>().ToList();
 
                     foreach (var record in records)
                     {
                         try
                         {
-                            // Проверяем, существует ли продукт
-                            var productExists = _db.Products.Any(p => p.Id == record.ProductId);
-                            if (!productExists)
+                            // Проверка корректности данных
+                            if (string.IsNullOrEmpty(record.ProductId) ||
+                                string.IsNullOrEmpty(record.ProductName) ||
+                                record.Quantity < 0 ||
+                                string.IsNullOrEmpty(record.Zone))
                             {
-                                errors.Add($"Продукт {record.ProductId} не найден");
                                 failedCount++;
+                                errors.Add($"Некорректные данные: {record.ProductId} / {record.ProductName}");
                                 continue;
                             }
 
-                            // Добавляем новую запись истории
-                            var entry = new InventoryHistory
+                            // Проверка существования продукта
+                            var product = await _db.Products.FindAsync(record.ProductId);
+                            if (product == null)
+                            {
+                                // Если нет — создаём новый
+                                product = new Product
+                                {
+                                    Id = record.ProductId,
+                                    Name = record.ProductName,
+                                    Category = "Imported",
+                                    Min_stock = 10,
+                                    Optimal_stock = 100
+                                };
+                                _db.Products.Add(product);
+                            }
+
+                            // Добавляем запись в историю
+                            var history = new InventoryHistory
                             {
                                 ProductId = record.ProductId,
-                                RobotId = record.RobotId ?? "manual_import",
                                 Quantity = record.Quantity,
                                 Zone = record.Zone,
-                                RowNumber = record.RowNumber,
-                                ShelfNumber = record.ShelfNumber,
-                                Status = record.Status,
-                                ScannedAt = DateTime.UtcNow,
-                                CreatedAt = DateTime.UtcNow
+                                RowNumber = record.Row,
+                                ShelfNumber = record.Shelf,
+                                Status = record.Quantity == 0 ? "CRITICAL"
+                                        : record.Quantity < 10 ? "LOW_STOCK"
+                                        : "OK",
+                                ScannedAt = record.Date,
+                                CreatedAt = DateTime.UtcNow,
+                                RobotId = "manual_import"
                             };
 
-                            _db.InventoryHistory.Add(entry);
+                            _db.InventoryHistory.Add(history);
                             successCount++;
                         }
                         catch (Exception ex)
                         {
                             failedCount++;
-                            errors.Add($"Ошибка в строке {record.ProductId}: {ex.Message}");
+                            errors.Add($"Ошибка при обработке строки {record.ProductId}: {ex.Message}");
                         }
                     }
 
@@ -146,11 +173,14 @@ namespace SmartStorageBackend.Controllers
                 }
                 catch (HeaderValidationException)
                 {
-                    return BadRequest(new { message = "Некорректный формат CSV-файла." });
+                    return BadRequest(new
+                    {
+                        message = "Неверный формат CSV. Ожидается заголовок: product_id;product_name;quantity;zone;date;row;shelf"
+                    });
                 }
                 catch (Exception ex)
                 {
-                    return StatusCode(500, new { message = $"Ошибка обработки CSV: {ex.Message}" });
+                    return StatusCode(500, new { message = $"Ошибка при чтении файла: {ex.Message}" });
                 }
             }
 
