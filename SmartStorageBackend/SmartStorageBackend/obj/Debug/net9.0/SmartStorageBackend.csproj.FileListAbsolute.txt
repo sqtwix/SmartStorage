@@ -284,7 +284,6 @@ C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\obj\Debug\ne
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Castle.Core.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Moq.dll
-C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\CsvHelper.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\EPPlus.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\EPPlus.Interfaces.dll
@@ -298,3 +297,6 @@ C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\ne
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\System.Security.Cryptography.Xml.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
