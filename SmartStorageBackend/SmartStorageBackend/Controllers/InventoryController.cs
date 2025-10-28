@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using SmartStorageBackend.DTOs;
+using SmartStorageBackend.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using CsvHelper;
 
 namespace SmartStorageBackend.Controllers
 {
@@ -76,6 +80,86 @@ namespace SmartStorageBackend.Controllers
             };
 
             return Ok(responce);
+        }
+
+        [HttpPost("import")]
+        [RequestSizeLimit(15_000_000)] // максимум 15 МБ
+        public async Task<IActionResult> ImportCSV(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest(new { message = "Файл не загружен." });
+            }
+
+            //  Инициализация данных для ответа
+            var successCount = 0;
+            var failedCount = 0;
+            var errors = new List<string>();
+
+            // Считывание файла
+            using (var stream = file.OpenReadStream())
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                try
+                {
+                    var records = csv.GetRecords<InventoryCsvRow>().ToList();
+
+                    foreach (var record in records)
+                    {
+                        try
+                        {
+                            // Проверяем, существует ли продукт
+                            var productExists = _db.Products.Any(p => p.Id == record.ProductId);
+                            if (!productExists)
+                            {
+                                errors.Add($"Продукт {record.ProductId} не найден");
+                                failedCount++;
+                                continue;
+                            }
+
+                            // Добавляем новую запись истории
+                            var entry = new InventoryHistory
+                            {
+                                ProductId = record.ProductId,
+                                RobotId = record.RobotId ?? "manual_import",
+                                Quantity = record.Quantity,
+                                Zone = record.Zone,
+                                RowNumber = record.RowNumber,
+                                ShelfNumber = record.ShelfNumber,
+                                Status = record.Status,
+                                ScannedAt = DateTime.UtcNow,
+                                CreatedAt = DateTime.UtcNow
+                            };
+
+                            _db.InventoryHistory.Add(entry);
+                            successCount++;
+                        }
+                        catch (Exception ex)
+                        {
+                            failedCount++;
+                            errors.Add($"Ошибка в строке {record.ProductId}: {ex.Message}");
+                        }
+                    }
+
+                    await _db.SaveChangesAsync();
+                }
+                catch (HeaderValidationException)
+                {
+                    return BadRequest(new { message = "Некорректный формат CSV-файла." });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, new { message = $"Ошибка обработки CSV: {ex.Message}" });
+                }
+            }
+
+            return Ok(new
+            {
+                success = successCount,
+                failed = failedCount,
+                errors
+            });
         }
     }
 }

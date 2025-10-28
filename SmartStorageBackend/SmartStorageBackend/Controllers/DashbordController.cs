@@ -55,6 +55,9 @@ public class DashboardController : ControllerBase
                h.ShelfNumber,
                h.Status,
                h.ScannedAt
+
+
+
            })
            .ToListAsync();
 

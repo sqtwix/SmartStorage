@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartStorageTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61588df5933f6956ea334f8d9fd5b4309d75a3a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2befbdd02063e2f657826b7107bd4fd47944dd98")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartStorageTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartStorageTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
