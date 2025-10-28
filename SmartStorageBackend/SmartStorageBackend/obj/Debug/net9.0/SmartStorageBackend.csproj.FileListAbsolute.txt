@@ -285,3 +285,4 @@ C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\ne
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\Moq.dll
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageBackend\bin\Debug\net9.0\CsvHelper.dll

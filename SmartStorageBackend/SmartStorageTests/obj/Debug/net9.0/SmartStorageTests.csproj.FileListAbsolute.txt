@@ -273,3 +273,4 @@ C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageTests\bin\Debug\net9
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageTests\obj\Debug\net9.0\SmartSto.A59BA257.Up2Date
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageTests\obj\Debug\net9.0\SmartStorageTests.genruntimeconfig.cache
 C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageTests\obj\Debug\net9.0\ref\SmartStorageTests.dll
+C:\Users\ivan2\SmartStorage\SmartStorageBackend\SmartStorageTests\bin\Debug\net9.0\CsvHelper.dll

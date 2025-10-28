@@ -9,6 +9,7 @@
       "SmartStorageBackend/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "CsvHelper": "33.1.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.10",
           "Microsoft.AspNetCore.OpenApi": "9.0.10",
           "Microsoft.AspNetCore.SignalR.Common": "9.0.10",
@@ -39,6 +40,14 @@
           "lib/net6.0/Castle.Core.dll": {
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.1.1.0"
+          }
+        }
+      },
+      "CsvHelper/33.1.0": {
+        "runtime": {
+          "lib/net9.0/CsvHelper.dll": {
+            "assemblyVersion": "33.0.0.0",
+            "fileVersion": "33.1.0.26"
           }
         }
       },
@@ -821,6 +830,13 @@
       "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
       "path": "castle.core/5.1.1",
       "hashPath": "castle.core.5.1.1.nupkg.sha512"
+    },
+    "CsvHelper/33.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kqfTOZGrn7NarNeXgjh86JcpTHUoeQDMB8t9NVa/ZtlSYiV1rxfRnQ49WaJsob4AiGrbK0XDzpyKkBwai4F8eg==",
+      "path": "csvhelper/33.1.0",
+      "hashPath": "csvhelper.33.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
