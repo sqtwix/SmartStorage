@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\bin\\Debug",
+    "\\bin\\Debug\\net8.0",
+    "\\Controllers",
+    "\\Modules",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\obj\\Debug\\net8.0",
+    "\\Services"
+  ],
+  "SelectedNode": "\\py_ai_mod.csproj",
+  "PreviewInSolutionExplorer": false
+}
