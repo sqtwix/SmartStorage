@@ -3,6 +3,8 @@ using SmartStorageBackend;
 using SmartStorageBackend.Hubs;
 using Microsoft.OpenApi.Models;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Подключаем EF Core
@@ -19,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
         Title = "SmartStorage API",
         Version = "v1",
         Description = "Backend для системы SmartStorage (роботы, склад, ИИ)",
-        Contact = new OpenApiContactdot
+        Contact = new OpenApiContact
         {
             Name = "Backend Team",
             Email = "ivan20140767@gmail.com.com"

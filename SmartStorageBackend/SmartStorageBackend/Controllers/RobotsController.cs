@@ -64,6 +64,17 @@ namespace SmartStorageBackend.Controllers
                 dto.Timestamp
             });
 
+            // WEB SOCKET - Отправляем обновления о критических продуктах
+            if (dto.ScanResults.Any(s => s.Status == "CRITICAL"))
+            {
+                await _hub.Clients.All.SendAsync("inventory_alert", new
+                {
+                    robot_id = dto.RobotId,
+                    message = "Критическое количество товара!",
+                    time = DateTime.UtcNow
+                });
+            }
+
             return Ok(new { status = "received", message_id = Guid.NewGuid() });
         }
     }
