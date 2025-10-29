@@ -1,0 +1,146 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\controllers\\pyrobotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\controllers\\pyrobotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\py_bot_mod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\py_bot_mod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\models\\pyrobotmoduleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\models\\pyrobotmoduleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\services\\pyrobotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\services\\pyrobotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\services\\ipyrobotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\services\\ipyrobotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|c:\\users\\user\\desktop\\c#\\py_bot_mod\\py_bot_mod\\models\\pyrobotmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C429C3-44A7-459F-B154-9C7969C49368}|py_bot_mod\\py_bot_mod.csproj|solutionrelative:py_bot_mod\\models\\pyrobotmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 448,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PyRobotController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Controllers\\PyRobotController.cs",
+              "RelativeDocumentMoniker": "py_bot_mod\\Controllers\\PyRobotController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Controllers\\PyRobotController.cs",
+              "RelativeToolTip": "py_bot_mod\\Controllers\\PyRobotController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:21:57.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "py_bot_mod",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\py_bot_mod.csproj",
+              "RelativeDocumentMoniker": "py_bot_mod\\py_bot_mod.csproj",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\py_bot_mod.csproj",
+              "RelativeToolTip": "py_bot_mod\\py_bot_mod.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-26T14:16:41.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PyRobotModuleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Models\\PyRobotModuleConfig.cs",
+              "RelativeDocumentMoniker": "py_bot_mod\\Models\\PyRobotModuleConfig.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Models\\PyRobotModuleConfig.cs",
+              "RelativeToolTip": "py_bot_mod\\Models\\PyRobotModuleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:14:06.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PyRobotModule.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Models\\PyRobotModule.cs",
+              "RelativeDocumentMoniker": "py_bot_mod\\Models\\PyRobotModule.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Models\\PyRobotModule.cs",
+              "RelativeToolTip": "py_bot_mod\\Models\\PyRobotModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:10:46.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PyRobotService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Services\\PyRobotService.cs",
+              "RelativeDocumentMoniker": "py_bot_mod\\Services\\PyRobotService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Services\\PyRobotService.cs",
+              "RelativeToolTip": "py_bot_mod\\Services\\PyRobotService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:03:39.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPyRobotService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Services\\IPyRobotService.cs",
+              "RelativeDocumentMoniker": "py_bot_mod\\Services\\IPyRobotService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\py_bot_mod\\py_bot_mod\\Services\\IPyRobotService.cs",
+              "RelativeToolTip": "py_bot_mod\\Services\\IPyRobotService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:58:16.455Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 528,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 326,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
