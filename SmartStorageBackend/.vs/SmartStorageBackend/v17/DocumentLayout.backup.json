@@ -98,9 +98,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Program.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEEAAAAcAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs*",
+              "RelativeToolTip": "SmartStorageBackend\\Program.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T17:47:25.108Z",
               "EditorCaption": ""
@@ -113,7 +113,7 @@
               "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\RobotsController.cs",
               "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\RobotsController.cs",
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\RobotsController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA+wCQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T20:26:33.679Z",
               "EditorCaption": ""
@@ -128,8 +128,7 @@
               "RelativeToolTip": "SmartStorageTests\\ExportExcelControllerTests.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAYwFoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T17:13:33.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T17:13:33.881Z"
             },
             {
               "$type": "Document",
@@ -141,8 +140,7 @@
               "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryCsv.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:38:32.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T07:38:32.997Z"
             },
             {
               "$type": "Document",
@@ -154,8 +152,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\InventoryController.cs",
               "ViewState": "AgIAAJMAAAAAAAAAAAAuwMMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:26:17.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T20:26:17.687Z"
             },
             {
               "$type": "Document",
@@ -167,8 +164,7 @@
               "RelativeToolTip": "SmartStorageTests\\RobotsControllerTests.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAmwFgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T16:37:44.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T16:37:44.852Z"
             },
             {
               "$type": "Document",
@@ -180,8 +176,7 @@
               "RelativeToolTip": "SmartStorageTests\\InventoryControllerTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T14:59:42.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T14:59:42.176Z"
             },
             {
               "$type": "Document",
@@ -193,8 +188,7 @@
               "RelativeToolTip": "SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:53:45.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T10:53:45.484Z"
             },
             {
               "$type": "Document",
@@ -206,8 +200,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\ExportExcelController.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAuwFAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T16:29:42.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T16:29:42.337Z"
             },
             {
               "$type": "Document",
@@ -219,8 +212,7 @@
               "RelativeToolTip": "SmartStorageTests\\DashbordControllerTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:13:46.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T07:13:46.801Z"
             },
             {
               "$type": "Document",
@@ -228,12 +220,11 @@
               "Title": "InventoryHistoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs*",
-              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs*",
+              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
+              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAxwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:39:18.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T07:39:18.992Z"
             },
             {
               "$type": "Document",
@@ -245,8 +236,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\DashbordController.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAuwDgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T19:20:26.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T19:20:26.841Z"
             },
             {
               "$type": "Document",
@@ -258,8 +248,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T08:54:38.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T08:54:38.051Z"
             },
             {
               "$type": "Document",
@@ -271,8 +260,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Models\\InventoryHisrtory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:46:49.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T07:46:49.834Z"
             },
             {
               "$type": "Document",
@@ -284,8 +272,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\AiController.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T11:00:47.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T11:00:47.708Z"
             },
             {
               "$type": "Document",
@@ -297,8 +284,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Hubs\\DashboardHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:04:43.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T20:04:43.452Z"
             },
             {
               "$type": "Document",
@@ -310,8 +296,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Models\\Robot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:10:07.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T20:10:07.792Z"
             },
             {
               "$type": "Document",
@@ -323,8 +308,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Models\\AiPrediction.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T10:53:29.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T10:53:29.581Z"
             },
             {
               "$type": "Document",
@@ -336,8 +320,7 @@
               "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T08:37:22.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T08:37:22.387Z"
             },
             {
               "$type": "Document",
@@ -349,8 +332,7 @@
               "RelativeToolTip": "SmartStorageBackend\\Models\\Product.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T14:22:36.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T14:22:36.584Z"
             }
           ]
         }
