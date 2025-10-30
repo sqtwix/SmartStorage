@@ -44,7 +44,7 @@ public class AuthControllerTests : IDisposable
     private IConfiguration GetConfig()
     {
         var inMemorySettings = new Dictionary<string, string> {
-            {"Jwt:Key", "super_secret_test_jwt_key_1234567890_abcdef"}
+            {"Jwt:Key", "SmartStorageSuperSecretKey_2025_AI_Robotics_1234567890"}
         };
         return new ConfigurationBuilder()
             .AddInMemoryCollection(inMemorySettings)

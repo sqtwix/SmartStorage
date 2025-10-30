@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("py_ai_mod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9824f527255f27739fe9a88356a07a9c9813d54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f8d6c8bbe4332ed6ac6041100c73c61a90bcea7")]
 [assembly: System.Reflection.AssemblyProductAttribute("py_ai_mod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("py_ai_mod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
