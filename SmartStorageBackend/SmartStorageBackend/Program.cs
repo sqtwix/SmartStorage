@@ -56,6 +56,7 @@ builder.Services.AddSwaggerGen(c =>
 // Добавляем SignalR
 builder.Services.AddSignalR();
 
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Swagger UI и OpenAPI JSON
