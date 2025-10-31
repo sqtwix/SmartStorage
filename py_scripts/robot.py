@@ -77,14 +77,22 @@ class RobotEmulator:
         }
 
         try:
+            
+            # FIX 1
+            
             response = requests.post(
                 f"{self.api_url}/api/robots/data",
-                json=data,
+                json={"email": "robot1@local", "password": "robotpassword123"},
                 headers={
                     "Authorization": f"Bearer robot_token_{self.robot_id}",
                     "Content-Type": "application/json"        
                 }
             )
+
+            # FIX 2
+
+            token = response.json()["token"]
+
             if response.status_code == 200:
                 print(f"[{self.robot_id}] Data sent successfully")
             else:
@@ -102,9 +110,9 @@ class RobotEmulator:
 
 
 if __name__ == "__main__":
-    api_url = os.getenv('API_URL', 'http://localhost:3000')
+    api_url = os.getenv('API_URL', 'http://localhost:5171')
     robots_count = int(os.getenv('ROBOTS_COUNT', 5))
-
+    print(api_url)
     # Запуск эмуляторов роботов
     import threading
 

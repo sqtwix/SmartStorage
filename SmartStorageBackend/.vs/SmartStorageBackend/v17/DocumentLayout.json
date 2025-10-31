@@ -1,93 +1,109 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\robotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\robotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\inventoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\inventoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\inventoryhisrtory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\inventoryhisrtory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\inventorycsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\inventorycsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragetests\\inventorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\inventorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\exportexcelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\exportexcelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\dashbordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\dashbordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\hubs\\dashboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\hubs\\dashboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\aipredictiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\aipredictiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragetests\\exportexcelcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\exportexcelcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragetests\\dashbordcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\dashbordcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragetests\\robotscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\robotscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\ivan2\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\aiprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragetests\\dashbordcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\dashbordcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\smartstoragecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\smartstoragecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\smartstoragebackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\smartstoragebackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\smartstoragebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\smartstoragebackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\robotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\robotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\robotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\robotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\inventoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\inventoryhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\inventoryhisrtory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\inventoryhisrtory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\inventorycsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\inventorycsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragetests\\inventorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\inventorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\exportexcelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\exportexcelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\controllers\\dashbordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\controllers\\dashbordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\hubs\\dashboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\hubs\\dashboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\dtos\\aipredictiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\dtos\\aipredictiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragetests\\exportexcelcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\exportexcelcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragetests\\robotscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2D96C04-CBF7-4829-BD16-32AE58F86278}|SmartStorageTests\\SmartStorageTests.csproj|solutionrelative:smartstoragetests\\robotscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|c:\\users\\user\\desktop\\c#\\smartstorage\\smartstoragebackend\\smartstoragebackend\\models\\aiprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{345133DC-DA62-441C-954F-05CD46239B3E}|SmartStorageBackend\\SmartStorageBackend.csproj|solutionrelative:smartstoragebackend\\models\\aiprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -101,154 +117,210 @@
           "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SmartStorageBackend.http",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.http",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\SmartStorageBackend.http",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.http",
+              "RelativeToolTip": "SmartStorageBackend\\SmartStorageBackend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-10-31T13:04:12.007Z"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\User.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\User.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Program.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAQwNcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T09:28:50.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\appsettings.json",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
-              "RelativeToolTip": "SmartStorageBackend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-30T07:34:25.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
-              "RelativeDocumentMoniker": "SmartStorageTests\\AuthControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
-              "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T08:37:22.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InventoryController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\InventoryController.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\InventoryController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\InventoryController.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Controllers\\InventoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:26:17.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InventoryControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\InventoryControllerTests.cs",
-              "RelativeDocumentMoniker": "SmartStorageTests\\InventoryControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\InventoryControllerTests.cs",
-              "RelativeToolTip": "SmartStorageTests\\InventoryControllerTests.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAYwE4AAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T14:59:42.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InventoryHistoryDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
-              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:39:18.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "InventoryCsv.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryCsv.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\InventoryCsv.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryCsv.cs",
-              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryCsv.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:38:32.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RobotsController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\RobotsController.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\RobotsController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\RobotsController.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Controllers\\RobotsController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAmwD8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:26:33.679Z",
+              "WhenOpened": "2025-10-28T17:47:25.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Product.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\InventoryController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Controllers\\InventoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T14:22:36.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T20:26:17.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InventoryHisrtory.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\InventoryHisrtory.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\InventoryHisrtory.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\InventoryHisrtory.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Models\\InventoryHisrtory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "InventoryControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\InventoryControllerTests.cs",
+              "RelativeDocumentMoniker": "SmartStorageTests\\InventoryControllerTests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\InventoryControllerTests.cs",
+              "RelativeToolTip": "SmartStorageTests\\InventoryControllerTests.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAYwE4AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:46:49.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T14:59:42.176Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Program.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Program.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Title": "InventoryHistoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
+              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryHistoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T17:47:25.108Z"
+              "WhenOpened": "2025-10-28T07:39:18.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InventoryCsv.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryCsv.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\InventoryCsv.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\InventoryCsv.cs",
+              "RelativeToolTip": "SmartStorageBackend\\DTOs\\InventoryCsv.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T07:38:32.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Robot.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Robot.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\Robot.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Robot.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Models\\Robot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T20:10:07.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashbordControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\DashbordControllerTests.cs",
+              "RelativeDocumentMoniker": "SmartStorageTests\\DashbordControllerTests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\DashbordControllerTests.cs",
+              "RelativeToolTip": "SmartStorageTests\\DashbordControllerTests.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwBwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T07:13:46.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RobotsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\RobotsController.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\RobotsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\RobotsController.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Controllers\\RobotsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T20:26:33.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Product.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:22:36.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InventoryHisrtory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\InventoryHisrtory.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\InventoryHisrtory.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\InventoryHisrtory.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Models\\InventoryHisrtory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T07:46:49.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RobotDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\RobotDTO.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\RobotDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\RobotDTO.cs",
+              "RelativeToolTip": "SmartStorageBackend\\DTOs\\RobotDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T12:59:59.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SmartStorageContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageContext.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\SmartStorageContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageContext.cs",
+              "RelativeToolTip": "SmartStorageBackend\\SmartStorageContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T13:00:50.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SmartStorageBackend.csproj",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\SmartStorageBackend.csproj",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\SmartStorageBackend.csproj",
+              "RelativeToolTip": "SmartStorageBackend\\SmartStorageBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-31T13:01:28.776Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "AuthControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
+              "RelativeDocumentMoniker": "SmartStorageTests\\AuthControllerTests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
+              "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T08:37:22.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
+              "RelativeToolTip": "SmartStorageBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-30T07:34:25.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ExportExcelController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\ExportExcelController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\ExportExcelController.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\ExportExcelController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\ExportExcelController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\ExportExcelController.cs",
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\ExportExcelController.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAuwFAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -256,31 +328,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "DashboardHub.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Hubs\\DashboardHub.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Hubs\\DashboardHub.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Hubs\\DashboardHub.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Hubs\\DashboardHub.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Hubs\\DashboardHub.cs",
               "RelativeToolTip": "SmartStorageBackend\\Hubs\\DashboardHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T20:04:43.452Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\User.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T09:28:50.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "DashbordController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\DashbordController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\DashbordController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAkwD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -288,11 +364,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "AiController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AiController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AiController.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\AiController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AiController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AiController.cs",
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\AiController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -300,11 +376,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\AuthController.cs",
               "RelativeToolTip": "SmartStorageBackend\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -312,11 +388,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "RobotsControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\RobotsControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\RobotsControllerTests.cs",
               "RelativeDocumentMoniker": "SmartStorageTests\\RobotsControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\RobotsControllerTests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\RobotsControllerTests.cs",
               "RelativeToolTip": "SmartStorageTests\\RobotsControllerTests.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAmwFgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -324,11 +400,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "ExportExcelControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\ExportExcelControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\ExportExcelControllerTests.cs",
               "RelativeDocumentMoniker": "SmartStorageTests\\ExportExcelControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\ExportExcelControllerTests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\ExportExcelControllerTests.cs",
               "RelativeToolTip": "SmartStorageTests\\ExportExcelControllerTests.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAYwFoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -336,11 +412,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "AiPredictionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
               "RelativeToolTip": "SmartStorageBackend\\DTOs\\AiPredictionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -348,39 +424,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DashbordControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\DashbordControllerTests.cs",
-              "RelativeDocumentMoniker": "SmartStorageTests\\DashbordControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\DashbordControllerTests.cs",
-              "RelativeToolTip": "SmartStorageTests\\DashbordControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T07:13:46.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Robot.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Robot.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\Robot.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\Robot.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Models\\Robot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T20:10:07.792Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "AiPrediction.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\AiPrediction.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\AiPrediction.cs",
               "RelativeDocumentMoniker": "SmartStorageBackend\\Models\\AiPrediction.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\AiPrediction.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\C#\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Models\\AiPrediction.cs",
               "RelativeToolTip": "SmartStorageBackend\\Models\\AiPrediction.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T10:53:29.581Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 106,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 106,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             }
           ]
         }

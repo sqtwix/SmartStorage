@@ -19,6 +19,7 @@ namespace SmartStorageBackend.Models
             public int CurrentShelf { get; set; }
 
             public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
-        
+            public int UserId { get; set; }
+            public User? User { get; set; }
     }
 }
