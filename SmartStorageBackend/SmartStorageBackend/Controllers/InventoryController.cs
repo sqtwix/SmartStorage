@@ -31,8 +31,8 @@ namespace SmartStorageBackend.Controllers
             [FromQuery] int pageSize = 20)
         {
             // Установление периода (по умолчанию 24 ч)
-            var fromDate = from ?? DateTime.UtcNow.AddDays(-1);
-            var toDate = to ?? DateTime.UtcNow;
+            var fromDate = DateTime.SpecifyKind(from ?? DateTime.UtcNow.AddDays(-1), DateTimeKind.Utc);
+            var toDate = DateTime.SpecifyKind(to ?? DateTime.UtcNow, DateTimeKind.Utc);
 
             // Базовый запрос
             var query = _db.InventoryHistory
@@ -143,6 +143,8 @@ namespace SmartStorageBackend.Controllers
                                 _db.Products.Add(product);
                             }
 
+                            var dateUtc = DateTime.SpecifyKind(record.Date, DateTimeKind.Utc); // Исправляем Kind
+
                             // Добавляем запись в историю
                             var history = new InventoryHistory
                             {
@@ -154,7 +156,7 @@ namespace SmartStorageBackend.Controllers
                                 Status = record.Quantity == 0 ? "CRITICAL"
                                         : record.Quantity < 10 ? "LOW_STOCK"
                                         : "OK",
-                                ScannedAt = record.Date,
+                                ScannedAt = dateUtc,
                                 CreatedAt = DateTime.UtcNow,
                                 RobotId = "manual_import"
                             };

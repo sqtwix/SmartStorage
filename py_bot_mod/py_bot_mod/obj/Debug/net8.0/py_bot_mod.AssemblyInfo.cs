@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("py_bot_mod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f8d6c8bbe4332ed6ac6041100c73c61a90bcea7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ad660fc17c79baa651d9fcb3c4599ef182d4f58")]
 [assembly: System.Reflection.AssemblyProductAttribute("py_bot_mod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("py_bot_mod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

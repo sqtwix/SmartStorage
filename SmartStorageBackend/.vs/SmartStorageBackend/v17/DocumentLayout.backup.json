@@ -102,24 +102,12 @@
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
               "RelativeDocumentMoniker": "SmartStorageBackend\\appsettings.json",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json*",
-              "RelativeToolTip": "SmartStorageBackend\\appsettings.json*",
+              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\appsettings.json",
+              "RelativeToolTip": "SmartStorageBackend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-10-30T07:34:25.845Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DashbordController.cs",
-              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
-              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\DashbordController.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
-              "RelativeToolTip": "SmartStorageBackend\\Controllers\\DashbordController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAkwD4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T19:20:26.841Z"
             },
             {
               "$type": "Document",
@@ -139,8 +127,8 @@
               "Title": "AuthControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
               "RelativeDocumentMoniker": "SmartStorageTests\\AuthControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs*",
-              "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs*",
+              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageTests\\AuthControllerTests.cs",
+              "RelativeToolTip": "SmartStorageTests\\AuthControllerTests.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwC4AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T08:37:22.387Z",
@@ -193,6 +181,22 @@
               "ViewState": "AgIAAB0AAAAAAAAAAAAmwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T20:26:33.679Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DashbordController.cs",
+              "DocumentMoniker": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "RelativeDocumentMoniker": "SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "ToolTip": "C:\\Users\\ivan2\\SmartStorage\\SmartStorageBackend\\SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "RelativeToolTip": "SmartStorageBackend\\Controllers\\DashbordController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T19:20:26.841Z"
             },
             {
               "$type": "Document",
@@ -349,10 +353,6 @@
               "ViewState": "AgIAABAAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T14:22:36.584Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
