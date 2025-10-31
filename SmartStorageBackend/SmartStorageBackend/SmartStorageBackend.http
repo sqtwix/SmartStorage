@@ -1,0 +1,6 @@
+@SmartStorageBackend_HostAddress = http://localhost:5171
+
+GET {{SmartStorageBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

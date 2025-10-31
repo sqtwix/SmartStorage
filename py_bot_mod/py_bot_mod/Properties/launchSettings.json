@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "py_bot_mod": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:56479;http://localhost:56480"
+    }
+  }
+}
