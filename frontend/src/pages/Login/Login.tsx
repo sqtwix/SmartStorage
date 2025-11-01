@@ -69,7 +69,7 @@ export const Login = () => {
 
 					<form onSubmit={handleSubmit} className="login-form">
 						<Input
-							type="email"
+							type="text"
 							placeholder="Введите email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
@@ -78,12 +78,12 @@ export const Login = () => {
 						/>
 
 						<Input
-							type="password"
+							type="text"
 							placeholder="Введите пароль"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							error={fieldErrors.password}
-							autoComplete="current-password"
+							// autoComplete="current-password"
 						/>
 
 						<div className="login-checkbox">
