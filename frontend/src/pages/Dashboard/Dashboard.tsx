@@ -15,17 +15,6 @@ import { formatNumber } from '@/utils'
 
 import './Dashboard.css'
 
-const mockDashboardData : DashboardData = {
-	robots: [],
-	recentScans: [],
-	stats: {
-		total_products: 0,
-		total_scans: 0,
-		critical_products: 0,
-		active_robots: 0,
-		last_update: new Date().toISOString(),
-	},
-}
 
 export const Dashboard = () => {
 	const [data, setData] = useState<DashboardData | null>(null)
@@ -89,11 +78,10 @@ export const Dashboard = () => {
 	}, [])
 
 	const loadDashboardData = async () => {
-		// setData(mockDashboardData as DashboardData)
-			setLoading(false)
+		setLoading(false)
 		try {
 			const response = await dashboardApi.getCurrentData()
-		console.log('response', response)
+			console.log('response', response)
 			const processed = processDashboardData(response)
 			console.log('processed', processed)
 			setData(processed)
