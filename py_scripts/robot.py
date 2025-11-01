@@ -14,9 +14,9 @@ class RobotEmulator:
         self.api_url = api_url.rstrip("/")
         self.password = password
         self.battery = 100.0
-        self.current_zone = 'A'
-        self.current_row = 1
-        self.current_shelf = 1
+        self.current_zone = random.choice(['A', 'B', 'C', 'D', 'E'])
+        self.current_row = random.randint(1, 20)
+        self.current_shelf = random.randint(1, 10)
         self.token = None
         self.token_acquired_at = None
         self.token_ttl_seconds = 8 * 3600  # по ТЗ 8 часов токен, можно изменить
@@ -78,18 +78,31 @@ class RobotEmulator:
         return scan_results
 
     def move_to_next_location(self):
-        """Перемещение робота к следующей локации (циклично)."""
-        self.current_shelf += 1
-        if self.current_shelf > 10:
-            self.current_shelf = 1
-            self.current_row += 1
-            if self.current_row > 20:
-                self.current_row = 1
-                # переход к следующей зоне
-                self.current_zone = chr(ord(self.current_zone) + 1)
-                if ord(self.current_zone) > ord('Z'):
-                    self.current_zone = 'A'
-        # расход батареи
+        """Перемещение робота к следующей локации (хаотично)."""
+        # Случайный шаг движения (от 1 до 3 полок, иногда можно остаться на месте)
+        step = random.choice([0, 1, 1, 2, 3])  # чаще шаги 1-2, реже 0 или 3
+        
+        if step > 0:
+            self.current_shelf += step
+            # Обработка переполнения полки
+            if self.current_shelf > 10:
+                self.current_shelf = self.current_shelf - 10
+                # Случайно либо переходим на следующий ряд, либо остаемся
+                if random.random() < 0.8:  # 80% вероятность перехода на новый ряд
+                    self.current_row += random.randint(1, 2)
+                    if self.current_row > 20:
+                        self.current_row = self.current_row - 20
+                        # Случайно переходим к следующей зоне
+                        if random.random() < 0.3:  # 30% вероятность смены зоны
+                            new_zone_ord = ord(self.current_zone) + random.randint(1, 3)
+                            if new_zone_ord > ord('Z'):
+                                new_zone_ord = ord('A') + (new_zone_ord - ord('Z') - 1)
+                            self.current_zone = chr(new_zone_ord)
+                else:
+                    # Остаемся в той же зоне и ряду, просто корректируем полку
+                    self.current_shelf = min(self.current_shelf, 10)
+        
+        # Расход батареи
         self.battery -= random.uniform(0.1, 0.5)
         if self.battery < 20:
             # симуляция зарядки/догрузки
