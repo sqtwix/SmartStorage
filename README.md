@@ -73,7 +73,7 @@ dotnet run
 → по умолчанию запускается на `http://localhost:5171`
 
 Swagger-документация доступна по адресу:
-👉 **[http://localhost:5171/swagger](http://localhost:5171/swagger)**
+👉 **[http://localhost:5171/](http://localhost:5171)**
 
 ---
 
