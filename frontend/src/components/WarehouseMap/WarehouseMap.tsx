@@ -22,9 +22,9 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 	const handleCenter = () => setScale(1)
 
 	const getRobotPosition = (robot: Robot) => {
-		const zoneIndex = zones.indexOf(robot.current_zone)
-		const x = (zoneIndex * cols + robot.current_shelf) * 40
-		const y = robot.current_row * 30
+		const zoneIndex = zones.indexOf(robot.currentZone)
+		const x = (zoneIndex * cols + robot.currentShelf) * 40
+		const y = robot.currentRow * 30
 		return { x, y }
 	}
 
@@ -142,8 +142,8 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 										<div className={`robot-tooltip robot-tooltip-${tooltipPlacement.placement}`}>
 											<div className="robot-tooltip-content">
 												<div>ID: {robot.id}</div>
-												<div>Батарея: {robot.battery_level}%</div>
-												<div>Обновлено: {new Date(robot.last_update).toLocaleTimeString('ru')}</div>
+												<div>Батарея: {robot.batteryLevel}%</div>
+												<div>Обновлено: {new Date(robot.lastUpdate).toLocaleTimeString('ru')}</div>
 											</div>
 										</div>
 									</foreignObject>
@@ -158,6 +158,10 @@ export const WarehouseMap = ({ robots }: WarehouseMapProps) => {
 				<div className="legend-item">
 					<span className="legend-dot" style={{ background: '#4caf50' }}></span>
 					<span>Активен</span>
+				</div>
+				<div className="legend-item">
+					<span className="legend-dot" style={{ background: '#9e9e9e' }}></span>
+					<span>Простой</span>
 				</div>
 				<div className="legend-item">
 					<span className="legend-dot" style={{ background: '#ff9800' }}></span>

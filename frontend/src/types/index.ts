@@ -19,12 +19,12 @@ export interface LoginResponse {
 // Типы для роботов
 export interface Robot {
 	id: string
-	status: 'active' | 'low_battery' | 'offline'
-	battery_level: number
-	last_update: string
-	current_zone: string
-	current_row: number
-	current_shelf: number
+	status: 'active' | 'low_battery' | 'offline' | 'idle'
+	batteryLevel: number
+	lastUpdate: string
+	currentZone: string
+	currentRow: number
+	currentShelf: number
 }
 
 export interface RobotLocation {
@@ -66,11 +66,11 @@ export interface InventoryScan {
 
 // Типы для дашборда
 export interface DashboardStatistics {
+	total_products: number
+	total_scans: number
+	critical_products: number
 	active_robots: number
-	total_robots: number
-	checked_today: number
-	critical_items: number
-	average_battery: number
+	last_update: string
 }
 
 export interface DashboardData {

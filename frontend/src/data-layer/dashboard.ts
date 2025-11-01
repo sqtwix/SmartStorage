@@ -3,18 +3,16 @@ import { DashboardData, InventoryScan, Robot } from '@/types'
 export const processDashboardData = (data: DashboardData): DashboardData => {
 	console.log('processDashboardData', data)
 	console.log('processDashboardData robots', data.robots)
-	console.log('processDashboardData total_scans', data.total_scans)
-	console.log('processDashboardData statistics', data.statistics.active_robots)
-	console.log('processDashboardData statistics', data.statistics.total_robots)
-	console.log('processDashboardData statistics', data.statistics.checked_today)
-	console.log('processDashboardData statistics', data.statistics.critical_items)
-	console.log('processDashboardData statistics', data.statistics.average_battery)
+	console.log('processDashboardData recentScans', data.recentScans)
+	console.log('processDashboardData stats', data.stats.active_robots)
+	console.log('processDashboardData stats', data.stats.total_scans)
+	console.log('processDashboardData stats', data.stats.critical_products)
 	return {
 		...data,
 		robots: data.robots.map(processRobot),
-		// total_scans: data.total_scans.map(processScan).sort((a, b) => {
-			// return new Date(b.scanned_at).getTime() - new Date(a.scanned_at).getTime()
-		// }),
+		recentScans: data.recentScans.map(processScan).sort((a, b) => {
+			return new Date(b.scanned_at).getTime() - new Date(a.scanned_at).getTime()
+		}),
 	}
 }
 
@@ -23,8 +21,10 @@ export const processRobot = (robot: Robot): Robot => {
 
 	if (robot.status === 'offline') {
 		status = 'offline'
-	} else if (robot.battery_level < 20) {
+	} else if (robot.batteryLevel < 20) {
 		status = 'low_battery'
+	} else if (robot.status === 'idle') {
+		status = 'idle'
 	} else {
 		status = 'active'
 	}
@@ -67,6 +67,10 @@ export const getRobotStatusColor = (status: Robot['status']): string => {
 		return '#ff9800'
 	case 'offline':
 		return '#f44336'
+	case 'idle':
+		return '#9e9e9e'
+	default:
+		return '#9e9e9e'
 	}
 }
 

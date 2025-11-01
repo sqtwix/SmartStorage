@@ -11,19 +11,19 @@ import { WebSocketIndicator } from '@/components/WebSocketIndicator'
 import {  processDashboardData,wsService } from '@/data-layer'
 import { Loader } from '@/shared'
 import { AIPrediction, DashboardData, InventoryScan, Robot, WebSocketMessage } from '@/types'
-import { formatNumber, formatPercent } from '@/utils'
+import { formatNumber } from '@/utils'
 
 import './Dashboard.css'
 
 const mockDashboardData : DashboardData = {
 	robots: [],
-	total_scans: [],
-	statistics: {
-		active_robots: 10,
-		total_robots: 20,
-		checked_today: 100,
-		critical_items: 10,
-		average_battery: 50,
+	recentScans: [],
+	stats: {
+		total_products: 0,
+		total_scans: 0,
+		critical_products: 0,
+		active_robots: 0,
+		last_update: new Date().toISOString(),
 	},
 }
 
@@ -67,7 +67,7 @@ export const Dashboard = () => {
 					prev
 						? {
 							...prev,
-							total_scans: [newScan, ...prev.total_scans].slice(0, 20),
+							recentScans: [newScan, ...prev.recentScans].slice(0, 20),
 						}
 						: null
 				)
@@ -137,32 +137,32 @@ export const Dashboard = () => {
 					<div className="dashboard-statistics">
 						<StatisticsCard
 							title="Активных роботов"
-							value={`${data.statistics.active_robots}/${data.statistics.total_robots}`}
+							value={`${data.stats.active_robots}/${data.robots.length}`}
 							icon="🤖"
 							color="#4caf50"
 						/>
 						<StatisticsCard
 							title="Проверено сегодня"
-							value={formatNumber(data.statistics.checked_today)}
+							value={formatNumber(data.stats.total_scans)}
 							icon="✓"
 							color="#2196f3"
 						/>
 						<StatisticsCard
 							title="Критических остатков"
-							value={data.statistics.critical_items}
+							value={data.stats.critical_products}
 							icon="⚠"
 							color="#f44336"
 						/>
 						<StatisticsCard
-							title="Средний заряд батарей"
-							value={formatPercent(data.statistics.average_battery)}
-							icon="🔋"
-							color="#ff9800"
+							title="Всего товаров"
+							value={formatNumber(data.stats.total_products)}
+							icon="📦"
+							color="#2196f3"
 						/>
 					</div>
 
 					<div className="dashboard-scans">
-						<RecentScans scans={data.total_scans} />
+						<RecentScans scans={data.recentScans} />
 					</div>
 
 					<div className="dashboard-predictions">
