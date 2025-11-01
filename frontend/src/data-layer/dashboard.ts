@@ -42,23 +42,23 @@ export const determineStatus = (quantity: number): 'OK' | 'LOW_STOCK' | 'CRITICA
 
 export const getStatusColor = (status: 'OK' | 'LOW_STOCK' | 'CRITICAL'): string => {
 	switch (status) {
-		case 'OK':
-			return '#4caf50'
-		case 'LOW_STOCK':
-			return '#ff9800'
-		case 'CRITICAL':
-			return '#f44336'
+	case 'OK':
+		return '#4caf50'
+	case 'LOW_STOCK':
+		return '#ff9800'
+	case 'CRITICAL':
+		return '#f44336'
 	}
 }
 
 export const getRobotStatusColor = (status: Robot['status']): string => {
 	switch (status) {
-		case 'active':
-			return '#4caf50'
-		case 'low_battery':
-			return '#ff9800'
-		case 'offline':
-			return '#f44336'
+	case 'active':
+		return '#4caf50'
+	case 'low_battery':
+		return '#ff9800'
+	case 'offline':
+		return '#f44336'
 	}
 }
 

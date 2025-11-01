@@ -36,9 +36,9 @@ export const Dashboard = () => {
 				setData((prev) =>
 					prev
 						? {
-								...prev,
-								robots: prev.robots.map((robot) => (robot.id === updatedRobot.id ? updatedRobot : robot)),
-							}
+							...prev,
+							robots: prev.robots.map((robot) => (robot.id === updatedRobot.id ? updatedRobot : robot)),
+						}
 						: null
 				)
 			}
@@ -51,9 +51,9 @@ export const Dashboard = () => {
 				setData((prev) =>
 					prev
 						? {
-								...prev,
-								recent_scans: [newScan, ...prev.recent_scans].slice(0, 20),
-							}
+							...prev,
+							recent_scans: [newScan, ...prev.recent_scans].slice(0, 20),
+						}
 						: null
 				)
 			}

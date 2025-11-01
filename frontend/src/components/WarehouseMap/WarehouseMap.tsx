@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { Robot } from '@/types'
 import { getRobotStatusColor } from '@/data-layer'
+import { Robot } from '@/types'
 
 import './WarehouseMap.css'
 

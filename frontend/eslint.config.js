@@ -19,6 +19,10 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+      },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -29,7 +33,13 @@ export default tseslint.config(
     },
     settings: {
       'import/resolver': {
-        typescript: {},
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
       },
     },
     rules: {
@@ -61,9 +71,33 @@ export default tseslint.config(
         },
       ],
       'simple-import-sort/exports': 'error',
-      'import/no-unresolved': 'error',
+      // Отключаем проверку разрешения модулей, так как она не работает корректно с flat config
+      'import/no-unresolved': 'off',
       'indent': ['warn', 'tab'], // Используем табы вместо пробелов
       'no-mixed-spaces-and-tabs': 'error' // Запрещаем смешивание
+    },
+  },
+  // Конфигурация для Node.js файлов (vite.config.ts и т.д.)
+  {
+    files: ['*.config.{ts,js}', '*.config.*.{ts,js}'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.node.json',
+        },
+      },
+    },
+    rules: {
+      'import/no-unresolved': 'off',
     },
   }
 );

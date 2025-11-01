@@ -11,16 +11,16 @@ export const validatePassword = (password: string): boolean => {
 
 export const getValidationError = (field: 'email' | 'password', value: string): string | null => {
 	switch (field) {
-		case 'email':
-			if (!value) return 'Email обязателен'
-			if (!validateEmail(value)) return 'Некорректный формат email'
-			return null
-		case 'password':
-			if (!value) return 'Пароль обязателен'
-			if (!validatePassword(value)) return 'Пароль должен содержать минимум 8 символов'
-			return null
-		default:
-			return null
+	case 'email':
+		if (!value) return 'Email обязателен'
+		if (!validateEmail(value)) return 'Некорректный формат email'
+		return null
+	case 'password':
+		if (!value) return 'Пароль обязателен'
+		if (!validatePassword(value)) return 'Пароль должен содержать минимум 8 символов'
+		return null
+	default:
+		return null
 	}
 }
 

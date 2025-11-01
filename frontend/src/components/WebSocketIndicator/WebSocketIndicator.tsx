@@ -21,23 +21,23 @@ export const WebSocketIndicator = () => {
 
 	const getStatusColor = () => {
 		switch (status) {
-			case 'connected':
-				return '#4caf50'
-			case 'disconnected':
-				return '#f44336'
-			case 'reconnecting':
-				return '#9e9e9e'
+		case 'connected':
+			return '#4caf50'
+		case 'disconnected':
+			return '#f44336'
+		case 'reconnecting':
+			return '#9e9e9e'
 		}
 	}
 
 	const getStatusText = () => {
 		switch (status) {
-			case 'connected':
-				return 'Подключено'
-			case 'disconnected':
-				return 'Отключено'
-			case 'reconnecting':
-				return 'Переподключение...'
+		case 'connected':
+			return 'Подключено'
+		case 'disconnected':
+			return 'Отключено'
+		case 'reconnecting':
+			return 'Переподключение...'
 		}
 	}
 

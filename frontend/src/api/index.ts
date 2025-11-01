@@ -1,5 +1,5 @@
 export * from './auth'
+export * from './client'
 export * from './dashboard'
 export * from './inventory'
-export * from './client'
 

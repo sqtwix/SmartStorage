@@ -1,8 +1,6 @@
-import { useState } from 'react'
 
 import { Button, Loader } from '@/shared'
 import { AIPrediction } from '@/types'
-import { formatDate } from '@/utils'
 
 import './AIPredictions.css'
 
