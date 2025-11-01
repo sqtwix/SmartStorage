@@ -26,8 +26,8 @@ npm install
 Создайте файл `.env` в корне папки frontend:
 
 ```env
-VITE_API_URL=http://localhost:3000
-VITE_WS_URL=ws://localhost:3000
+VITE_API_URL=http://localhost:5171
+VITE_WS_URL=ws://localhost:5171
 ```
 
 ### Запуск в режиме разработки

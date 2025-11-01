@@ -2,7 +2,7 @@ import { io, Socket } from 'socket.io-client'
 
 import { WebSocketMessage } from '@/types'
 
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:3000'
+const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:5171'
 
 export type ConnectionStatus = 'connected' | 'disconnected' | 'reconnecting'
 
