@@ -78,12 +78,11 @@ export const Dashboard = () => {
 	}, [])
 
 	const loadDashboardData = async () => {
-		setLoading(false)
 		try {
 			const response = await dashboardApi.getCurrentData()
-			console.log('response', response)
+			// console.log('response', response)
 			const processed = processDashboardData(response)
-			console.log('processed', processed)
+			// console.log('processed', processed)
 			setData(processed)
 		} catch (error) {
 			console.error('Failed to load dashboard data:', error)
@@ -93,16 +92,17 @@ export const Dashboard = () => {
 	}
 
 	const loadAIPredictions = async () => {
-		// setAiLoading(true)
-		// try {
-		// 	const response = await dashboardApi.getAIPredictions(7)
-		// 	setPredictions(response.predictions)
-		// 	setConfidence(response.confidence)
-		// } catch (error) {
-		// 	console.error('Failed to load AI predictions:', error)
-		// } finally {
-		// 	setAiLoading(false)
-		// }
+		setAiLoading(true)
+		try {
+			const response = await dashboardApi.getAIPredictions(7)
+			console.log('response', response)
+			setPredictions(response.predictions)
+			setConfidence(response.confidence)
+		} catch (error) {
+			console.error('Failed to load AI predictions:', error)
+		} finally {
+			setAiLoading(false)
+		}
 	}
 
 	if (loading || !data) {
