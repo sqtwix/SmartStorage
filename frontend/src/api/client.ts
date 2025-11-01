@@ -1,13 +1,11 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5171'
-
 class ApiClient {
 	private client: AxiosInstance
 
 	constructor() {
 		this.client = axios.create({
-			baseURL: API_BASE_URL,
+			baseURL: '', // Пустой baseURL для работы с Vite proxy
 			headers: {
 				'Content-Type': 'application/json',
 			},

@@ -4,6 +4,7 @@ import { apiClient } from './client'
 
 export const authApi = {
 	login: async (credentials: LoginRequest): Promise<LoginResponse> => {
+		console.log('login', credentials)
 		const response = await apiClient.post<LoginResponse>('/api/auth/login', credentials)
 		return response.data
 	},

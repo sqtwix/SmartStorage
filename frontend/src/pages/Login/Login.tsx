@@ -69,7 +69,7 @@ export const Login = () => {
 
 					<form onSubmit={handleSubmit} className="login-form">
 						<Input
-							type="text"
+							type="email"
 							placeholder="Введите email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
@@ -78,7 +78,7 @@ export const Login = () => {
 						/>
 
 						<Input
-							type="text"
+							type="password"
 							placeholder="Введите пароль"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
