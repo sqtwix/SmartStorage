@@ -1,6 +1,7 @@
 # Простая модель на основе линейной регрессии
 from sklearn.linear_model import LinearRegression
 import pandas as pd
+import numpy as np
 
 def predict_stockout(product_history):
 
