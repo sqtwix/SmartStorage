@@ -77,6 +77,11 @@ Swagger-документация доступна по адресу:
 
 ---
 
+#### 🧠 AI Service:
+```bash
+cd py_ai_mod
+dotnet run --project py_ai_mod
+```
 #### 🤖 Robot Emulator:
 
 ```bash

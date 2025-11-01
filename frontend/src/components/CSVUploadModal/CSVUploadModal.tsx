@@ -58,7 +58,7 @@ export const CSVUploadModal = ({ isOpen, onClose, onSuccess }: CSVUploadModalPro
 				handleClose()
 			}, 2000)
 		} catch (err) {
-			setError('Ошибка при загрузке файла')
+			setError(`Ошибка при загрузке файла: ${err}`)
 		} finally {
 			setUploading(false)
 		}

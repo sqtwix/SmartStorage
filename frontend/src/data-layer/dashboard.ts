@@ -1,12 +1,6 @@
 import { DashboardData, InventoryScan, Robot } from '@/types'
 
 export const processDashboardData = (data: DashboardData): DashboardData => {
-	console.log('processDashboardData', data)
-	console.log('processDashboardData robots', data.robots)
-	console.log('processDashboardData recentScans', data.recentScans)
-	console.log('processDashboardData stats', data.stats.active_robots)
-	console.log('processDashboardData stats', data.stats.total_scans)
-	console.log('processDashboardData stats', data.stats.critical_products)
 	return {
 		...data,
 		robots: data.robots.map(processRobot),
