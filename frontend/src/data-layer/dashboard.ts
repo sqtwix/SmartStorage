@@ -1,12 +1,20 @@
 import { DashboardData, InventoryScan, Robot } from '@/types'
 
 export const processDashboardData = (data: DashboardData): DashboardData => {
+	console.log('processDashboardData', data)
+	console.log('processDashboardData robots', data.robots)
+	console.log('processDashboardData total_scans', data.total_scans)
+	console.log('processDashboardData statistics', data.statistics.active_robots)
+	console.log('processDashboardData statistics', data.statistics.total_robots)
+	console.log('processDashboardData statistics', data.statistics.checked_today)
+	console.log('processDashboardData statistics', data.statistics.critical_items)
+	console.log('processDashboardData statistics', data.statistics.average_battery)
 	return {
 		...data,
 		robots: data.robots.map(processRobot),
-		recent_scans: data.recent_scans.map(processScan).sort((a, b) => {
-			return new Date(b.scanned_at).getTime() - new Date(a.scanned_at).getTime()
-		}),
+		// total_scans: data.total_scans.map(processScan).sort((a, b) => {
+			// return new Date(b.scanned_at).getTime() - new Date(a.scanned_at).getTime()
+		// }),
 	}
 }
 

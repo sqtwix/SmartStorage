@@ -1,64 +1,81 @@
-import { io, Socket } from 'socket.io-client'
+import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr'
 
 import { WebSocketMessage } from '@/types'
-
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:5171'
 
 export type ConnectionStatus = 'connected' | 'disconnected' | 'reconnecting'
 
 export class WebSocketService {
-	private socket: Socket | null = null
+	private connection: HubConnection | null = null
 	private listeners: Map<string, Set<(data: WebSocketMessage) => void>> = new Map()
 	private statusListeners: Set<(status: ConnectionStatus) => void> = new Set()
 
-	connect() {
-		if (this.socket?.connected) {
+	async connect() {
+		if (this.connection?.state === HubConnectionState.Connected) {
+			console.log('WebSocket already connected')
 			return
 		}
 
+		if (this.connection) {
+			await this.connection.stop()
+			this.connection = null
+		}
+
 		const token = localStorage.getItem('auth_token')
+		
+		// Используем относительный путь - Vite proxy перенаправит на бэкенд
+		this.connection = new HubConnectionBuilder()
+			.withUrl('/api/ws/dashboard', {
+				accessTokenFactory: () => token || '',
+			})
+			.withAutomaticReconnect()
+			.build()
 
-		this.socket = io(WS_URL, {
-			path: '/api/ws/dashboard',
-			auth: {
-				token,
-			},
-			transports: ['websocket'],
-		})
+		console.log('socket', this.connection)
 
-		this.socket.on('connect', () => {
-			this.notifyStatusChange('connected')
-		})
-
-		this.socket.on('disconnect', () => {
-			this.notifyStatusChange('disconnected')
-		})
-
-		this.socket.on('reconnecting', () => {
+		// Обработчики событий SignalR
+		this.connection.onreconnecting(() => {
+			console.log('reconnecting')
 			this.notifyStatusChange('reconnecting')
 		})
 
-		this.socket.on('message', (message: WebSocketMessage) => {
-			this.notifyListeners(message.type, message)
+		this.connection.onreconnected(() => {
+			console.log('reconnected')
+			this.notifyStatusChange('connected')
 		})
 
-		this.socket.on('robot_update', (data: WebSocketMessage) => {
-			this.notifyListeners('robot_update', data)
+		this.connection.onclose(() => {
+			console.log('disconnected')
+			this.notifyStatusChange('disconnected')
 		})
 
-		this.socket.on('inventory_alert', (data: WebSocketMessage) => {
-			this.notifyListeners('inventory_alert', data)
+		// Подписка на события от сервера
+		this.connection.on('robot_update', (data: WebSocketMessage['data']) => {
+			this.notifyListeners('robot_update', { type: 'robot_update', data })
 		})
 
-		this.socket.on('scan_update', (data: WebSocketMessage) => {
-			this.notifyListeners('scan_update', data)
+		this.connection.on('inventory_alert', (data: WebSocketMessage['data']) => {
+			this.notifyListeners('inventory_alert', { type: 'inventory_alert', data })
 		})
+
+		this.connection.on('scan_update', (data: WebSocketMessage['data']) => {
+			this.notifyListeners('scan_update', { type: 'scan_update', data })
+		})
+
+		// Запуск подключения
+		try {
+			await this.connection.start()
+			console.log('WebSocket connected')
+			this.notifyStatusChange('connected')
+		} catch (error) {
+			console.error('WebSocket connection failed:', error)
+			this.notifyStatusChange('disconnected')
+		}
 	}
 
-	disconnect() {
-		if (this.socket) {
-			this.socket.disconnect()
-			this.socket = null
+	async disconnect() {
+		if (this.connection) {
+			await this.connection.stop()
+			this.connection = null
 		}
 	}
 
@@ -93,7 +110,7 @@ export class WebSocketService {
 	}
 
 	isConnected(): boolean {
-		return this.socket?.connected || false
+		return this.connection?.state === HubConnectionState.Connected || false
 	}
 }
 

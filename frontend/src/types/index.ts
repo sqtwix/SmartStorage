@@ -75,8 +75,8 @@ export interface DashboardStatistics {
 
 export interface DashboardData {
 	robots: Robot[]
-	recent_scans: InventoryScan[]
-	statistics: DashboardStatistics
+	recentScans: InventoryScan[]
+	stats: DashboardStatistics
 }
 
 // Типы для исторических данных

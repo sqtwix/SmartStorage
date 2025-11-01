@@ -6,12 +6,12 @@ using SmartStorageBackend;
 using SmartStorageBackend.Hubs;
 using System.Text;
 
-// Создайте/отредактируйте appsettings.json: ConnectionStrings:DefaultConnection и (опционально) Jwt:Key
+// РќР°СЃС‚СЂРѕР№РєР°/РїРµСЂРµРЅР°СЃС‚СЂРѕР№РєР° appsettings.json: ConnectionStrings:DefaultConnection Рё (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ) Jwt:Key
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
-// JWT key (dev). Лучше переопределять в appsettings.json или через переменные окружения.
+// JWT key (dev). РњРѕР¶РЅРѕ РїРµСЂРµРЅР°СЃС‚СЂРѕРёС‚СЊ РІ appsettings.json РёР»Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РїРµСЂРµРјРµРЅРЅРѕРµ РѕРєСЂСѓР¶РµРЅРёСЏ.
 var jwtKey = configuration["Jwt:Key"] ?? "ChangeThisSecretInProduction_ReplaceMe!";
 var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
 
@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = false; // в prod = true
+    options.RequireHttpsMetadata = false; // РІ prod = true
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -38,6 +38,36 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
         ValidateLifetime = true
+    };
+    
+    // РќР°СЃС‚СЂРѕР№РєР° РґР»СЏ SignalR: РїРѕР»СѓС‡РµРЅРёРµ С‚РѕРєРµРЅР° РёР· Query String РёР»Рё Header
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            var path = context.HttpContext.Request.Path;
+            
+            // Р”Р»СЏ WebSocket СЃРѕРµРґРёРЅРµРЅРёР№ РїСЂРѕРІРµСЂСЏРµРј query string Рё Р·Р°РіРѕР»РѕРІРѕРє
+            if (path.StartsWithSegments("/api/ws"))
+            {
+                var accessToken = context.Request.Query["access_token"];
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    context.Token = accessToken;
+                }
+                // Р•СЃР»Рё С‚РѕРєРµРЅР° РЅРµС‚ РІ query string, РїСЂРѕРІРµСЂСЏРµРј Р·Р°РіРѕР»РѕРІРѕРє Authorization
+                else
+                {
+                    var authHeader = context.Request.Headers["Authorization"].ToString();
+                    if (!string.IsNullOrEmpty(authHeader) && authHeader.StartsWith("Bearer "))
+                    {
+                        context.Token = authHeader.Substring("Bearer ".Length).Trim();
+                    }
+                }
+            }
+
+            return Task.CompletedTask;
+        }
     };
 });
 
@@ -58,7 +88,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "SmartStorage API",
         Version = "v1",
-        Description = "Backend для системы SmartStorage (роботы, склад, ИИ)",
+        Description = "Backend РґР»СЏ СЃРёСЃС‚РµРјС‹ SmartStorage (СЂРѕР±РѕС‚С‹, СЃРєР»Р°Рґ, РР)",
         Contact = new OpenApiContact
         {
             Name = "Backend Team",
@@ -70,7 +100,7 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Введите JWT токен: Bearer {token}",
+        Description = "Р’СЃС‚Р°РІСЊС‚Рµ JWT С‚РѕРєРµРЅ: Bearer {token}",
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
     });
@@ -90,6 +120,18 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddSignalR();
 builder.Services.AddHttpClient();
 
+// CORS РґР»СЏ С„СЂРѕРЅС‚РµРЅРґР°
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173", "http://localhost:5171")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials(); // Р’Р°Р¶РЅРѕ РґР»СЏ SignalR
+    });
+});
+
 var app = builder.Build();
 
 // ----------------- Swagger UI -----------------
@@ -99,14 +141,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartStorage API v1");
-        c.RoutePrefix = string.Empty; // swagger на корне
+        c.RoutePrefix = string.Empty; // swagger РЅР° РєРѕСЂРЅРµ
     });
 }
+else
+{
+    app.UseHttpsRedirection();
+}
 
-app.UseHttpsRedirection();
 app.UseRouting();
 
-// Обязательно: Authentication перед Authorization
+app.UseCors("AllowFrontend");
+
+// Р’Р°Р¶РЅРѕ: Authentication РїРµСЂРµРґ Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -116,8 +163,8 @@ app.UseEndpoints(endpoints =>
     endpoints.MapHub<DashboardHub>("/api/ws/dashboard");
 });
 
-// ----------------- Dev seed: создаём N роботов и пользователей-роботов -----------------
-// Настройка: сколько роботов создать в dev (можно брать из конфигурации)
+// ----------------- Dev seed: СЃРѕР·РґР°РЅРёРµ N СЂРѕР±РѕС‚РѕРІ Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°-СЋР·РµСЂР° -----------------
+// Р—Р°РјРµС‡Р°РЅРёРµ: С‚РѕР»СЊРєРѕ РґР»СЏ dev СЂРµР¶РёРјР° (СЌС‚РѕРіРѕ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ)
 int robotsToSeed = int.TryParse(configuration["Dev:RobotsCount"], out var tmp) ? tmp : 5;
 
 try
@@ -126,16 +173,16 @@ try
     {
         var db = scope.ServiceProvider.GetRequiredService<SmartStorageContext>();
 
-        // Убедиться, что база существует / применены миграции (в прод — выполнять миграции отдельно)
-        // db.Database.EnsureCreated(); // опционально, если не используешь миграции
+        // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Р±Р°Р·Р° РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅР° / РјРёРіСЂР°С†РёРё РїСЂРёРјРµРЅРµРЅС‹ (РІ РїСЂРѕРґР°РєС€РµРЅРµ РІС‹РїРѕР»РЅСЏСЋС‚СЃСЏ РјРёРіСЂР°С†РёРё РѕС‚РґРµР»СЊРЅРѕ)
+        // db.Database.EnsureCreated(); // С‚РѕР»СЊРєРѕ РµСЃР»Рё РјРёРіСЂР°С†РёРё РЅРµ РїСЂРёРјРµРЅРµРЅС‹
 
-        // Создадим указанное количество роботов, если ещё нет
+        // РЎРѕР·РґР°С‘Рј РјРёРЅРёРјР°Р»СЊРЅС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»Рё РґР»СЏ СЂРѕР±РѕС‚РѕРІ, РµСЃР»Рё РёС… РЅРµС‚
         for (int i = 1; i <= robotsToSeed; i++)
         {
             var robotId = $"RB-{i:000}";
             var robotEmail = $"{robotId.ToLower()}@robots.local"; // e.g. rb-001@robots.local
 
-            // Если пользователь с таким email не существует — создаём
+            // РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃ С‚Р°РєРёРј email РЅРµ РЅР°С…РѕРґРёС‚СЃСЏ РІ Р±Р°Р·Рµ
             if (!db.Users.Any(u => u.Email == robotEmail))
             {
                 var hashed = BCrypt.Net.BCrypt.HashPassword("robotpassword123");
@@ -143,7 +190,7 @@ try
                 {
                     Email = robotEmail,
                     PasswordHash = hashed,
-                    Name = robotId, // используем имя как идентификатор робота
+                    Name = robotId, // РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРµ РёРјСЏ РєР°Рє РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЂРѕР±РѕС‚Р°
                     Role = "robot",
                     CreatedAt = DateTime.UtcNow
                 };
@@ -151,7 +198,7 @@ try
                 db.SaveChanges();
             }
 
-            // Если робот с таким Id не существует — создаём
+            // РµСЃР»Рё СЂРѕР±РѕС‚ СЃ С‚Р°РєРёРј Id РЅРµ РЅР°С…РѕРґРёС‚СЃСЏ РІ Р±Р°Р·Рµ
             if (!db.Robots.Any(r => r.Id == robotId))
             {
                 var robot = new SmartStorageBackend.Models.Robot
@@ -169,7 +216,7 @@ try
             }
         }
 
-        // (Опционально) Создаём admin для тестирования web UI
+        // (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ) СЃРѕР·РґР°С‘Рј admin РґР»СЏ Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ web UI
         if (!db.Users.Any(u => u.Email == "admin@local"))
         {
             var hashedAdmin = BCrypt.Net.BCrypt.HashPassword("adminpassword123");
@@ -187,7 +234,7 @@ try
 }
 catch (Exception ex)
 {
-    // Логируем, но не падаем
+    // РёРіРЅРѕСЂРёСЂСѓРµРј, РїРѕ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё Р»РѕРіРёСЂСѓРµРј
     Console.WriteLine($"Seed error: {ex.Message}");
 }
 

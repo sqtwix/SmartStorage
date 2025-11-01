@@ -8,12 +8,24 @@ import { RecentScans } from '@/components/RecentScans'
 import { StatisticsCard } from '@/components/StatisticsCard'
 import { WarehouseMap } from '@/components/WarehouseMap'
 import { WebSocketIndicator } from '@/components/WebSocketIndicator'
-import { processDashboardData, wsService } from '@/data-layer'
+import {  processDashboardData,wsService } from '@/data-layer'
 import { Loader } from '@/shared'
 import { AIPrediction, DashboardData, InventoryScan, Robot, WebSocketMessage } from '@/types'
 import { formatNumber, formatPercent } from '@/utils'
 
 import './Dashboard.css'
+
+const mockDashboardData : DashboardData = {
+	robots: [],
+	total_scans: [],
+	statistics: {
+		active_robots: 10,
+		total_robots: 20,
+		checked_today: 100,
+		critical_items: 10,
+		average_battery: 50,
+	},
+}
 
 export const Dashboard = () => {
 	const [data, setData] = useState<DashboardData | null>(null)
@@ -27,7 +39,10 @@ export const Dashboard = () => {
 		loadAIPredictions()
 
 		// WebSocket подключение
-		wsService.connect()
+		const initWebSocket = async () => {
+			await wsService.connect()
+		}
+		initWebSocket()
 
 		// Подписка на обновления роботов
 		wsService.subscribe('robot_update', (message: WebSocketMessage) => {
@@ -52,7 +67,7 @@ export const Dashboard = () => {
 					prev
 						? {
 							...prev,
-							recent_scans: [newScan, ...prev.recent_scans].slice(0, 20),
+							total_scans: [newScan, ...prev.total_scans].slice(0, 20),
 						}
 						: null
 				)
@@ -66,14 +81,21 @@ export const Dashboard = () => {
 
 		return () => {
 			clearInterval(interval)
-			wsService.disconnect()
+			const cleanupWebSocket = async () => {
+				await wsService.disconnect()
+			}
+			cleanupWebSocket()
 		}
 	}, [])
 
 	const loadDashboardData = async () => {
+		// setData(mockDashboardData as DashboardData)
+			setLoading(false)
 		try {
 			const response = await dashboardApi.getCurrentData()
+		console.log('response', response)
 			const processed = processDashboardData(response)
+			console.log('processed', processed)
 			setData(processed)
 		} catch (error) {
 			console.error('Failed to load dashboard data:', error)
@@ -83,19 +105,21 @@ export const Dashboard = () => {
 	}
 
 	const loadAIPredictions = async () => {
-		setAiLoading(true)
-		try {
-			const response = await dashboardApi.getAIPredictions(7)
-			setPredictions(response.predictions)
-			setConfidence(response.confidence)
-		} catch (error) {
-			console.error('Failed to load AI predictions:', error)
-		} finally {
-			setAiLoading(false)
-		}
+		// setAiLoading(true)
+		// try {
+		// 	const response = await dashboardApi.getAIPredictions(7)
+		// 	setPredictions(response.predictions)
+		// 	setConfidence(response.confidence)
+		// } catch (error) {
+		// 	console.error('Failed to load AI predictions:', error)
+		// } finally {
+		// 	setAiLoading(false)
+		// }
 	}
 
 	if (loading || !data) {
+		console.log('loading', loading)
+		console.log('data', data)
 		return <Loader fullScreen size="large" />
 	}
 
@@ -138,7 +162,7 @@ export const Dashboard = () => {
 					</div>
 
 					<div className="dashboard-scans">
-						<RecentScans scans={data.recent_scans} />
+						<RecentScans scans={data.total_scans} />
 					</div>
 
 					<div className="dashboard-predictions">

@@ -15,6 +15,7 @@ export default defineConfig({
 			'/api': {
 				target: 'http://localhost:5171',
 				changeOrigin: true,
+				ws: true, // Поддержка WebSocket для прокси
 			},
 		},
 	},
