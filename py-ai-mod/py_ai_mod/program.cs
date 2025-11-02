@@ -46,5 +46,6 @@ app.MapPost("/predict", (AiPredictRequest request) =>
 })
 ;
 
-// Старт приложения (listen on 8000 to match SmartStorageBackend)
-app.Run("http://localhost:8000");
+// Старт приложения (будет использовать ASPNETCORE_URLS из переменных окружения, например "http://+:8000")
+// Это позволяет принимать соединения из других контейнеров Docker
+app.Run();
