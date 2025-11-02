@@ -24,16 +24,16 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 	// Тип HTMLDivElement указывает, что ref будет хранить ссылку на div-элемент
 	const containerRef = useRef<HTMLDivElement>(null)
 
-	// A-Z зоны (26 зон)
-	const zones = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
+	// A-Z столбцы (26 столбцов)
+	const columns = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
 	const rows = 50
-	const cols = 10
 	const cellWidth = 17
 	const cellHeight = 17
-	const zoneWidth = cols * cellWidth + 4 // ширина зоны с отступами
+	const columnWidth = cellWidth + 2 // ширина столбца с отступами
 	const leftMargin = 30 // отступ для номеров строк слева
-	const mapWidth = zones.length * zoneWidth + leftMargin
-	const mapHeight = rows * cellHeight + 40 // высота карты с заголовками
+	const topMargin = 30 // отступ для букв столбцов сверху
+	const mapWidth = columns.length * columnWidth + leftMargin
+	const mapHeight = rows * cellHeight + topMargin
 
 	const handleZoomIn = () => setScale(Math.min(scale + 0.2, 2))
 	const handleZoomOut = () => setScale(Math.max(scale - 0.2, 0.3))
@@ -96,26 +96,29 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 		}
 	}, [])
 
-	// Определение статуса зоны на основе сканирований
-	const getZoneStatus = (zone: string): 'checked' | 'needs_check' | 'critical' => {
-		const zoneScans = recentScans.filter(scan => scan.zone === zone)
+	// Определение статуса ячейки на основе сканирований
+	const getCellStatus = (column: string, row: number): 'checked' | 'needs_check' | 'critical' => {
+		const cellScans = recentScans.filter(scan => 
+			scan.zone === column && 
+			scan.row_number === row
+		)
 		
-		if (zoneScans.length === 0) {
-			return 'needs_check' // Зона не проверялась - требует проверки
+		if (cellScans.length === 0) {
+			return 'needs_check' // Ячейка не проверялась - требует проверки
 		}
 
 		// Проверяем наличие критических остатков
-		const hasCritical = zoneScans.some(scan => scan.status === 'CRITICAL')
+		const hasCritical = cellScans.some(scan => scan.status === 'CRITICAL')
 		if (hasCritical) {
 			return 'critical'
 		}
 
-		// Проверяем, когда последний раз проверялась зона
-		const lastScan = zoneScans.reduce((latest, scan) => {
+		// Проверяем, когда последний раз проверялась ячейка
+		const lastScan = cellScans.reduce((latest, scan) => {
 			const scanTime = new Date(scan.scanned_at).getTime()
 			const latestTime = new Date(latest.scanned_at).getTime()
 			return scanTime > latestTime ? scan : latest
-		}, zoneScans[0])
+		}, cellScans[0])
 
 		const hoursSinceLastScan = (Date.now() - new Date(lastScan.scanned_at).getTime()) / (1000 * 60 * 60)
 		
@@ -140,13 +143,13 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 	}
 
 	const getRobotPosition = (robot: Robot) => {
-		const zoneIndex = zones.indexOf(robot.currentZone)
-		if (zoneIndex === -1) {
-			// Если зона не найдена, размещаем в зоне A
-			return { x: leftMargin + (robot.currentShelf - 1) * cellWidth + 10, y: (robot.currentRow - 1) * cellHeight + 30 }
+		const columnIndex = columns.indexOf(robot.currentZone)
+		if (columnIndex === -1) {
+			// Если столбец не найден, размещаем в столбце A
+			return { x: leftMargin + 0 * columnWidth + cellWidth / 2, y: (robot.currentRow - 1) * cellHeight + topMargin + cellHeight / 2 }
 		}
-		const x = leftMargin + zoneIndex * zoneWidth + (robot.currentShelf - 1) * cellWidth + 10
-		const y = (robot.currentRow - 1) * cellHeight + 30
+		const x = leftMargin + columnIndex * columnWidth + cellWidth / 2
+		const y = (robot.currentRow - 1) * cellHeight + topMargin + cellHeight / 2
 		return { x, y }
 	}
 
@@ -247,12 +250,25 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 							height: `${mapHeight * scale}px`, // Фактическая высота SVG в пикселях
 						}}
 					>
+						{/* Column letters - буквы столбцов сверху */}
+						{columns.map((column, colIdx) => (
+							<text
+								key={`col-${column}`}
+								x={leftMargin + colIdx * columnWidth + cellWidth / 2}
+								y={topMargin - 5}
+								textAnchor="middle"
+								className="zone-label"
+							>
+								{column}
+							</text>
+						))}
+
 						{/* Row numbers - номера строк слева */}
 						{Array.from({ length: rows }).map((_, rowIdx) => (
 							<text
 								key={`row-${rowIdx}`}
 								x={leftMargin - 5}
-								y={30 + rowIdx * cellHeight + cellHeight / 2 + 4}
+								y={topMargin + rowIdx * cellHeight + cellHeight / 2 + 4}
 								textAnchor="end"
 								className="zone-label"
 							>
@@ -260,41 +276,29 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 							</text>
 						))}
 
-						{/* Grid */}
-						{zones.map((zone, zoneIdx) => {
-							const zoneStatus = getZoneStatus(zone)
-							const zoneColor = getZoneColor(zoneStatus)
-							
-							return (
-								<g key={zone}>
-									<text 
-										x={leftMargin + zoneIdx * zoneWidth + zoneWidth / 2} 
-										y={20} 
-										textAnchor="middle" 
-										className="zone-label"
-									>
-										Зона {zone}
-									</text>
-									{Array.from({ length: rows }).map((_, rowIdx) => (
-										<g key={`${zone}-${rowIdx}`}>
-											{Array.from({ length: cols }).map((_, colIdx) => (
-												<rect
-													key={`${zone}-${rowIdx}-${colIdx}`}
-													x={leftMargin + zoneIdx * zoneWidth + colIdx * cellWidth + 10}
-													y={30 + rowIdx * cellHeight}
-													width={cellWidth - 2}
-													height={cellHeight - 2}
-													className="warehouse-cell"
-													fill={zoneColor}
-													stroke={zoneStatus === 'critical' ? '#f44336' : zoneStatus === 'needs_check' ? '#ffc107' : '#a5d6a7'}
-													strokeWidth={zoneStatus === 'critical' ? 1.5 : 1}
-												/>
-											))}
-										</g>
-									))}
-								</g>
-							)
-						})}
+						{/* Grid - сетка ячеек */}
+						{columns.map((column, colIdx) => (
+							<g key={column}>
+								{Array.from({ length: rows }).map((_, rowIdx) => {
+									const cellStatus = getCellStatus(column, rowIdx + 1)
+									const cellColor = getZoneColor(cellStatus)
+									
+									return (
+										<rect
+											key={`${column}-${rowIdx}`}
+											x={leftMargin + colIdx * columnWidth}
+											y={topMargin + rowIdx * cellHeight}
+											width={cellWidth - 2}
+											height={cellHeight - 2}
+											className="warehouse-cell"
+											fill={cellColor}
+											stroke={cellStatus === 'critical' ? '#f44336' : cellStatus === 'needs_check' ? '#ffc107' : '#a5d6a7'}
+											strokeWidth={cellStatus === 'critical' ? 1.5 : 1}
+										/>
+									)
+								})}
+							</g>
+						))}
 
 						{/* Robots */}
 						{robots.map((robot) => {
@@ -311,8 +315,8 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 									onMouseLeave={() => setHoveredRobot(null)}
 									className="robot-marker"
 								>
-									<circle cx={cellWidth / 2} cy={cellHeight / 2} r={17} fill={color} />
-									<text x={cellWidth / 2} y={cellHeight / 2 + 4} textAnchor="middle" className="robot-label" fontSize={`${cellWidth}px`}>
+									<circle cx={0} cy={0} r={17} fill={color} />
+									<text x={0} y={4} textAnchor="middle" className="robot-label" fontSize={`${cellWidth}px`}>
 										{robot.id.split('-')[1] || robot.id}
 									</text>
 
@@ -360,7 +364,7 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 					</div>
 				</div>
 				<div className="legend-section">
-					<div className="legend-title">Зоны:</div>
+					<div className="legend-title">Ячейки:</div>
 					<div className="legend-items">
 						<div className="legend-item">
 							<span className="legend-dot" style={{ background: '#c8e6c9' }}></span>
