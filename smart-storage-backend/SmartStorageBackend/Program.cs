@@ -201,14 +201,32 @@ try
             // если робот с таким Id не находится в базе
             if (!db.Robots.Any(r => r.Id == robotId))
             {
+                var random = new Random();
+                
+                // Генерация случайной зоны от A до Z
+                var randomZone = ((char)('A' + random.Next(0, 26))).ToString();
+                
+                // Генерация случайного статуса
+                var statuses = new[] { "active", "idle", "low_battery", "offline" };
+                var randomStatus = statuses[random.Next(statuses.Length)];
+                
+                // Генерация случайного уровня батареи (20-100 для новых роботов)
+                var randomBattery = random.Next(20, 101);
+                
+                // Генерация случайного ряда (1-50)
+                var randomRow = random.Next(1, 51);
+                
+                // Генерация случайной полки (1-10)
+                var randomShelf = random.Next(1, 11);
+                
                 var robot = new SmartStorageBackend.Models.Robot
                 {
                     Id = robotId,
-                    Status = "idle",
-                    BatteryLevel = 100,
-                    CurrentZone = "A",
-                    CurrentRow = 1,
-                    CurrentShelf = 1,
+                    Status = randomStatus,
+                    BatteryLevel = randomBattery,
+                    CurrentZone = randomZone,
+                    CurrentRow = randomRow,
+                    CurrentShelf = randomShelf,
                     LastUpdate = DateTime.UtcNow
                 };
                 db.Robots.Add(robot);
