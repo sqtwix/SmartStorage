@@ -21,6 +21,7 @@ namespace SmartStorageBackend.DTOs
     public class ScanResultDTO
     {
         public string ProductId { get; set; } = null!;
+        public string? ProductName { get; set; }
         public int Quantity { get; set; }
         public string Status { get; set; } = "OK"; // 'OK', 'LOW_STOCK', 'CRITICAL'
     }

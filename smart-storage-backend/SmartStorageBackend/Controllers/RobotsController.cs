@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SignalR;
 using SmartStorageBackend.Hubs;
 using SmartStorageBackend.DTOs;
 using SmartStorageBackend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SmartStorageBackend.Controllers
 {
@@ -36,7 +37,9 @@ namespace SmartStorageBackend.Controllers
             robot.CurrentRow = dto.Location.Row;
             robot.CurrentShelf = dto.Location.Shelf;
             robot.LastUpdate = dto.Timestamp;
+            robot.Status = "active";
 
+            var savedScanIds = new List<int>();
             foreach (var scan in dto.ScanResults)
             {
                 var entry = new InventoryHistory
@@ -51,26 +54,56 @@ namespace SmartStorageBackend.Controllers
                     ScannedAt = dto.Timestamp
                 };
                 _db.InventoryHistory.Add(entry);
+                await _db.SaveChangesAsync();
+                savedScanIds.Add(entry.Id);
             }
 
-            await _db.SaveChangesAsync();
-
-            // WEB SOCKET - Отправляем обновления всем подключённым клиентам
+            // WEB SOCKET - РѕС‚РїСЂР°РІРєР° РѕР±РЅРѕРІР»РµРЅРёСЏ СЂРѕР±РѕС‚Р° (РїРѕР»РЅС‹Р№ РѕР±СЉРµРєС‚ Robot СЃ РїСЂР°РІРёР»СЊРЅС‹РјРё РїРѕР»СЏРјРё)
             await _hub.Clients.All.SendAsync("robot_update", new
             {
-                dto.RobotId,
-                dto.Location,
-                dto.BatteryLevel,
-                dto.Timestamp
+                id = robot.Id,
+                status = robot.Status,
+                batteryLevel = robot.BatteryLevel,
+                lastUpdate = robot.LastUpdate,
+                currentZone = robot.CurrentZone,
+                currentRow = robot.CurrentRow,
+                currentShelf = robot.CurrentShelf
             });
 
-            // WEB SOCKET - Отправляем обновления о критических продуктах
+            // WEB SOCKET - РѕС‚РїСЂР°РІРєР° РєР°Р¶РґРѕРіРѕ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ С‡РµСЂРµР· scan_update
+            foreach (var scan in dto.ScanResults)
+            {
+                var scanEntry = await _db.InventoryHistory
+                    .Where(h => h.RobotId == dto.RobotId && h.ProductId == scan.ProductId && savedScanIds.Contains(h.Id))
+                    .OrderByDescending(h => h.ScannedAt)
+                    .FirstOrDefaultAsync();
+
+                if (scanEntry != null)
+                {
+                    await _hub.Clients.All.SendAsync("scan_update", new
+                    {
+                        id = scanEntry.Id,
+                        robot_id = scanEntry.RobotId,
+                        product_id = scanEntry.ProductId,
+                        product_name = scan.ProductName ?? "",
+                        quantity = scanEntry.Quantity,
+                        zone = scanEntry.Zone,
+                        row_number = scanEntry.RowNumber,
+                        shelf_number = scanEntry.ShelfNumber,
+                        status = scanEntry.Status,
+                        scanned_at = scanEntry.ScannedAt.ToString("o"),
+                        created_at = scanEntry.CreatedAt.ToString("o")
+                    });
+                }
+            }
+
+            // WEB SOCKET - РѕС‚РїСЂР°РІРєР° alert РґР»СЏ РєСЂРёС‚РёС‡РµСЃРєРёС… РѕСЃС‚Р°С‚РєРѕРІ
             if (dto.ScanResults.Any(s => s.Status == "CRITICAL"))
             {
                 await _hub.Clients.All.SendAsync("inventory_alert", new
                 {
                     robot_id = dto.RobotId,
-                    message = "Критическое количество товара!",
+                    message = "РћР±РЅР°СЂСѓР¶РµРЅ РєСЂРёС‚РёС‡РµСЃРєРёР№ РѕСЃС‚Р°С‚РѕРє!",
                     time = DateTime.UtcNow
                 });
             }
