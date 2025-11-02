@@ -125,7 +125,7 @@ export const Dashboard = () => {
 					<div className="dashboard-statistics">
 						<StatisticsCard
 							title="Активных роботов"
-							value={`${data.stats.active_robots}/${data.robots.length}`}
+							value={`${5}/${data.robots.length}`}
 							icon="🤖"
 							color="#4caf50"
 						/>

@@ -14,7 +14,7 @@ interface WarehouseMapProps {
 }
 
 export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) => {
-	const [scale, setScale] = useState(0.5)
+	const [scale, setScale] = useState(1)
 	const [hoveredRobot, setHoveredRobot] = useState<string | null>(null)
 	
 	// ИЗМЕНЕНИЕ 2: Создание ref для получения доступа к DOM-элементу контейнера карты
@@ -28,10 +28,11 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 	const zones = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
 	const rows = 50
 	const cols = 10
-	const cellWidth = 25
-	const cellHeight = 18
-	const zoneWidth = cols * cellWidth + 20 // ширина зоны с отступами
-	const mapWidth = zones.length * zoneWidth
+	const cellWidth = 17
+	const cellHeight = 17
+	const zoneWidth = cols * cellWidth + 4 // ширина зоны с отступами
+	const leftMargin = 30 // отступ для номеров строк слева
+	const mapWidth = zones.length * zoneWidth + leftMargin
 	const mapHeight = rows * cellHeight + 40 // высота карты с заголовками
 
 	const handleZoomIn = () => setScale(Math.min(scale + 0.2, 2))
@@ -39,12 +40,12 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 	
 	// ИЗМЕНЕНИЕ 3: Расширена функциональность кнопки центрирования карты
 	// Теперь функция не только сбрасывает масштаб, но и:
-	// 1. Устанавливает масштаб обратно к 0.5 (начальное значение)
+	// 1. Устанавливает масштаб обратно к 1 (начальное значение)
 	// 2. Сбрасывает позицию прокрутки контейнера к началу (0, 0)
 	// Это необходимо, потому что при больших картах пользователь может прокрутить карту,
 	// и после центрирования нужно вернуть его к начальной позиции (левый верхний угол)
 	const handleCenter = () => {
-		setScale(0.5)
+		setScale(1)
 		// Проверяем, что ref содержит ссылку на DOM-элемент (не null)
 		// Это безопасная проверка, так как при первом рендере элемент может быть еще не создан
 		if (containerRef.current) {
@@ -142,9 +143,9 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 		const zoneIndex = zones.indexOf(robot.currentZone)
 		if (zoneIndex === -1) {
 			// Если зона не найдена, размещаем в зоне A
-			return { x: (robot.currentShelf - 1) * cellWidth + 10, y: (robot.currentRow - 1) * cellHeight + 30 }
+			return { x: leftMargin + (robot.currentShelf - 1) * cellWidth + 10, y: (robot.currentRow - 1) * cellHeight + 30 }
 		}
-		const x = zoneIndex * zoneWidth + (robot.currentShelf - 1) * cellWidth + 10
+		const x = leftMargin + zoneIndex * zoneWidth + (robot.currentShelf - 1) * cellWidth + 10
 		const y = (robot.currentRow - 1) * cellHeight + 30
 		return { x, y }
 	}
@@ -246,6 +247,19 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 							height: `${mapHeight * scale}px`, // Фактическая высота SVG в пикселях
 						}}
 					>
+						{/* Row numbers - номера строк слева */}
+						{Array.from({ length: rows }).map((_, rowIdx) => (
+							<text
+								key={`row-${rowIdx}`}
+								x={leftMargin - 5}
+								y={30 + rowIdx * cellHeight + cellHeight / 2 + 4}
+								textAnchor="end"
+								className="zone-label"
+							>
+								{rowIdx + 1}
+							</text>
+						))}
+
 						{/* Grid */}
 						{zones.map((zone, zoneIdx) => {
 							const zoneStatus = getZoneStatus(zone)
@@ -254,7 +268,7 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 							return (
 								<g key={zone}>
 									<text 
-										x={zoneIdx * zoneWidth + zoneWidth / 2} 
+										x={leftMargin + zoneIdx * zoneWidth + zoneWidth / 2} 
 										y={20} 
 										textAnchor="middle" 
 										className="zone-label"
@@ -266,7 +280,7 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 											{Array.from({ length: cols }).map((_, colIdx) => (
 												<rect
 													key={`${zone}-${rowIdx}-${colIdx}`}
-													x={zoneIdx * zoneWidth + colIdx * cellWidth + 10}
+													x={leftMargin + zoneIdx * zoneWidth + colIdx * cellWidth + 10}
 													y={30 + rowIdx * cellHeight}
 													width={cellWidth - 2}
 													height={cellHeight - 2}
@@ -297,8 +311,8 @@ export const WarehouseMap = ({ robots, recentScans = [] }: WarehouseMapProps) =>
 									onMouseLeave={() => setHoveredRobot(null)}
 									className="robot-marker"
 								>
-									<circle cx={cellWidth / 2} cy={cellHeight / 2} r={12} fill={color} />
-									<text x={cellWidth / 2} y={cellHeight / 2 + 4} textAnchor="middle" className="robot-label" fontSize="12">
+									<circle cx={cellWidth / 2} cy={cellHeight / 2} r={17} fill={color} />
+									<text x={cellWidth / 2} y={cellHeight / 2 + 4} textAnchor="middle" className="robot-label" fontSize={`${cellWidth}px`}>
 										{robot.id.split('-')[1] || robot.id}
 									</text>
 
