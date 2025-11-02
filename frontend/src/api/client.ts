@@ -27,7 +27,11 @@ class ApiClient {
 		this.client.interceptors.response.use(
 			(response) => response,
 			(error) => {
-				if (error.response?.status === 401) {
+				// Не делаем редирект на /login если мы уже на странице логина
+				// чтобы избежать бесконечного цикла перезагрузок
+				const isLoginPage = window.location.pathname === '/login' || window.location.pathname === '/login/'
+				
+				if (error.response?.status === 401 && !isLoginPage) {
 					localStorage.removeItem('auth_token')
 					localStorage.removeItem('user')
 					window.location.href = '/login'
