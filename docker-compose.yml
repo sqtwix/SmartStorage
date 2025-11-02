@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: smart_storage_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d smart_storage_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: 
+      context: ./smart-storage-backend/SmartStorageBackend
+      dockerfile: Dockerfile
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=postgres;Database=smart_storage_db;Username=postgres;Password=123"
+      Authentication__Enabled: "false"
+      AI__Enabled: "false"
+    ports:
+      - "5171:5171"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./smart-storage-backend/uploads:/app/uploads
+
+  ai-module:
+    build: ./py-ai-mod/py_ai_mod
+    environment:
+      ASPNETCORE_URLS: "http://+:8000"
+      PythonScriptPath: "/app/py-scripts/ai.py"
+      BackendUrl: "http://backend:3000"
+      AI__Enabled: "false"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+    volumes:
+      - ./py-scripts:/app/py-scripts
+
+  bot-module:
+    build: ./py-bot-mod/py_bot_mod
+    environment:
+      ASPNETCORE_URLS: "http://+:5002"
+      PythonScriptPath: "/app/py-scripts/robot.py"
+      BackendUrl: "http://backend:3000"
+      ROBOTS_COUNT: "5"
+      UPDATE_INTERVAL: "10"
+    ports:
+      - "5002:5002"
+    depends_on:
+      - backend
+    volumes:
+      - ./py-scripts:/app/py-scripts
+
+  frontend:
+    build: ./frontend
+    environment:
+      REACT_APP_API_URL: http://localhost:3000
+      REACT_APP_WS_URL: ws://localhost:3000
+      REACT_APP_AUTH_ENABLED: "false"
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
