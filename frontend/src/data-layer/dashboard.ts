@@ -68,3 +68,10 @@ export const getRobotStatusColor = (status: Robot['status']): string => {
 	}
 }
 
+export const calculateAverageBatteryLevel = (robots: Robot[]): number => {
+	if (robots.length === 0) return 0
+	
+	const totalBattery = robots.reduce((sum, robot) => sum + robot.batteryLevel, 0)
+	return Math.round(totalBattery / robots.length)
+}
+

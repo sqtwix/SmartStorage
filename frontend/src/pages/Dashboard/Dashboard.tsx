@@ -8,7 +8,7 @@ import { RecentScans } from '@/components/RecentScans'
 import { StatisticsCard } from '@/components/StatisticsCard'
 import { WarehouseMap } from '@/components/WarehouseMap'
 import { WebSocketIndicator } from '@/components/WebSocketIndicator'
-import {  processDashboardData,wsService } from '@/data-layer'
+import { calculateAverageBatteryLevel, processDashboardData, wsService } from '@/data-layer'
 import { Loader } from '@/shared'
 import { AIPrediction, DashboardData, InventoryScan, Robot, WebSocketMessage } from '@/types'
 import { formatNumber } from '@/utils'
@@ -33,36 +33,6 @@ export const Dashboard = () => {
 		}
 		initWebSocket()
 
-		// Подписка на обновления роботов
-		wsService.subscribe('robot_update', (message: WebSocketMessage) => {
-			if (data && 'id' in message.data) {
-				const updatedRobot = message.data as Robot
-				setData((prev) =>
-					prev
-						? {
-							...prev,
-							robots: prev.robots.map((robot) => (robot.id === updatedRobot.id ? updatedRobot : robot)),
-						}
-						: null
-				)
-			}
-		})
-
-		// Подписка на новые сканирования
-		wsService.subscribe('scan_update', (message: WebSocketMessage) => {
-			if (data && 'product_id' in message.data) {
-				const newScan = message.data as InventoryScan
-				setData((prev) =>
-					prev
-						? {
-							...prev,
-							recentScans: [newScan, ...prev.recentScans].slice(0, 20),
-						}
-						: null
-				)
-			}
-		})
-
 		// Периодическое обновление
 		const interval = setInterval(() => {
 			loadDashboardData()
@@ -76,6 +46,49 @@ export const Dashboard = () => {
 			cleanupWebSocket()
 		}
 	}, [])
+
+	// Подписка на обновления WebSocket
+	useEffect(() => {
+		if (!data) return
+
+		// Подписка на обновления роботов
+		const handleRobotUpdate = (message: WebSocketMessage) => {
+			if ('id' in message.data) {
+				const updatedRobot = message.data as Robot
+				setData((prev) =>
+					prev
+						? {
+							...prev,
+							robots: prev.robots.map((robot) => (robot.id === updatedRobot.id ? updatedRobot : robot)),
+						}
+						: null
+				)
+			}
+		}
+
+		// Подписка на новые сканирования
+		const handleScanUpdate = (message: WebSocketMessage) => {
+			if ('product_id' in message.data) {
+				const newScan = message.data as InventoryScan
+				setData((prev) =>
+					prev
+						? {
+							...prev,
+							recentScans: [newScan, ...prev.recentScans].slice(0, 20),
+						}
+						: null
+				)
+			}
+		}
+
+		wsService.subscribe('robot_update', handleRobotUpdate)
+		wsService.subscribe('scan_update', handleScanUpdate)
+
+		return () => {
+			wsService.unsubscribe('robot_update', handleRobotUpdate)
+			wsService.unsubscribe('scan_update', handleScanUpdate)
+		}
+	}, [data])
 
 	const loadDashboardData = async () => {
 		try {
@@ -142,10 +155,10 @@ export const Dashboard = () => {
 							color="#f44336"
 						/>
 						<StatisticsCard
-							title="Всего товаров"
-							value={formatNumber(data.stats.total_products)}
-							icon="📦"
-							color="#2196f3"
+							title="Средний заряд батарей"
+							value={`${calculateAverageBatteryLevel(data.robots)}%`}
+							icon="🔋"
+							color="#ff9800"
 						/>
 					</div>
 
