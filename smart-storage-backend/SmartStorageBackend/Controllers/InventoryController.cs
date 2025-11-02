@@ -30,43 +30,47 @@ namespace SmartStorageBackend.Controllers
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 20)
         {
-            // Установление периода (по умолчанию 24 ч)
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 24 пїЅ)
             var fromDate = DateTime.SpecifyKind(from ?? DateTime.UtcNow.AddDays(-1), DateTimeKind.Utc);
             var toDate = DateTime.SpecifyKind(to ?? DateTime.UtcNow, DateTimeKind.Utc);
 
-            // Базовый запрос
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             var query = _db.InventoryHistory
                 .Where(h => h.ScannedAt >= fromDate && h.ScannedAt <= toDate)
                 .AsQueryable();
 
-            // Фильтрация
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (!string.IsNullOrEmpty(zone))
                 query = query.Where(h => h.Zone.ToLower() == zone.ToLower());
 
             if (!string.IsNullOrEmpty(status))
                 query = query.Where(h => h.Status.ToLower() == status.ToLower());
 
-            // Получаем общее кол-во товаров
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             var total = query.Count();
 
-            // Получаем нужную страницу
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             var items = await query
                 .OrderByDescending(h => h.ScannedAt)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .Select(h => new
-                {
-                    h.Id,
-                    h.RobotId,
-                    h.ProductId,
-                    h.Quantity,
-                    h.Zone,
-                    h.RowNumber,
-                    h.ShelfNumber,
-                    h.Status,
-                    h.ScannedAt,
-                    h.CreatedAt
-                }).ToListAsync();
+                .Join(
+                    _db.Products,
+                    h => h.ProductId,
+                    p => p.Id,
+                    (h, p) => new
+                    {
+                        h.Id,
+                        RobotId = h.RobotId,
+                        ProductId = h.ProductId,
+                        ProductName = p.Name,
+                        Zone = h.Zone,
+                        Status = h.Status,
+                        Date = h.ScannedAt,
+                        ExpectedQuantity = p.Optimal_stock,
+                        ActualQuantity = h.Quantity
+                    }
+                ).ToListAsync();
 
             var responce = new
             {
@@ -84,11 +88,11 @@ namespace SmartStorageBackend.Controllers
         }
 
         [HttpPost("import")]
-        [RequestSizeLimit(15_000_000)] // Максимальный размер файла - 15 мб
+        [RequestSizeLimit(15_000_000)] // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - 15 пїЅпїЅ
        public async Task<IActionResult> ImportCSV(IFormFile file)
         {
             if (file == null || file.Length == 0)
-                return BadRequest(new { message = "Файл не был загружен." });
+                return BadRequest(new { message = "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ." });
 
             int successCount = 0;
             int failedCount = 0;
@@ -96,13 +100,13 @@ namespace SmartStorageBackend.Controllers
 
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
-                Delimiter = ";", // Разделитель
+                Delimiter = ";", // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 HasHeaderRecord = true,
-                MissingFieldFound = null, // игнорируем пустые поля
+                MissingFieldFound = null, // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 BadDataFound = null
             };
 
-            // Чтение файла
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             using (var stream = file.OpenReadStream())
             using (var reader = new StreamReader(stream))
             using (var csv = new CsvReader(reader, config))
@@ -116,22 +120,22 @@ namespace SmartStorageBackend.Controllers
                     {
                         try
                         {
-                            // Проверка корректности данных
+                            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                             if (string.IsNullOrEmpty(record.ProductId) ||
                                 string.IsNullOrEmpty(record.ProductName) ||
                                 record.Quantity < 0 ||
                                 string.IsNullOrEmpty(record.Zone))
                             {
                                 failedCount++;
-                                errors.Add($"Некорректные данные: {record.ProductId} / {record.ProductName}");
+                                errors.Add($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: {record.ProductId} / {record.ProductName}");
                                 continue;
                             }
 
-                            // Проверка существования продукта
+                            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                             var product = await _db.Products.FindAsync(record.ProductId);
                             if (product == null)
                             {
-                                // Если нет — создаём новый
+                                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                                 product = new Product
                                 {
                                     Id = record.ProductId,
@@ -143,9 +147,9 @@ namespace SmartStorageBackend.Controllers
                                 _db.Products.Add(product);
                             }
 
-                            var dateUtc = DateTime.SpecifyKind(record.Date, DateTimeKind.Utc); // Исправляем Kind
+                            var dateUtc = DateTime.SpecifyKind(record.Date, DateTimeKind.Utc); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Kind
 
-                            // Добавляем запись в историю
+                            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                             var history = new InventoryHistory
                             {
                                 ProductId = record.ProductId,
@@ -167,7 +171,7 @@ namespace SmartStorageBackend.Controllers
                         catch (Exception ex)
                         {
                             failedCount++;
-                            errors.Add($"Ошибка при обработке строки {record.ProductId}: {ex.Message}");
+                            errors.Add($"пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ {record.ProductId}: {ex.Message}");
                         }
                     }
 
@@ -177,12 +181,12 @@ namespace SmartStorageBackend.Controllers
                 {
                     return BadRequest(new
                     {
-                        message = "Неверный формат CSV. Ожидается заголовок: product_id;product_name;quantity;zone;date;row;shelf"
+                        message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ CSV. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: product_id;product_name;quantity;zone;date;row;shelf"
                     });
                 }
                 catch (Exception ex)
                 {
-                    return StatusCode(500, new { message = $"Ошибка при чтении файла: {ex.Message}" });
+                    return StatusCode(500, new { message = $"пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: {ex.Message}" });
                 }
             }
 

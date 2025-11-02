@@ -27,7 +27,7 @@ public class DashboardController : ControllerBase
     [HttpGet("current")]
     public async Task<IActionResult> GetCurrentState()
     {
-        // Информация о роботах
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         var robots = await _db.Robots
             .Select(r => new
             {
@@ -40,25 +40,32 @@ public class DashboardController : ControllerBase
                 r.LastUpdate
             }).ToListAsync();
 
-        // Информация о последних сканах
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         var recentScans = await _db.InventoryHistory
            .OrderByDescending(h => h.ScannedAt)
            .Take(20)
-           .Select(h => new
-           {
-               h.Id,
-               h.RobotId,
-               h.ProductId,
-               h.Quantity,
-               h.Zone,
-               h.RowNumber,
-               h.ShelfNumber,
-               h.Status,
-               h.ScannedAt
-           })
+           .Join(
+               _db.Products,
+               h => h.ProductId,
+               p => p.Id,
+               (h, p) => new
+               {
+                   h.Id,
+                   h.RobotId,
+                   h.ProductId,
+                   ProductName = p.Name,
+                   h.Quantity,
+                   h.Zone,
+                   h.RowNumber,
+                   h.ShelfNumber,
+                   h.Status,
+                   h.ScannedAt,
+                   h.CreatedAt
+               }
+           )
            .ToListAsync();
 
-        // Статистика
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         var stats = new
         {
             total_products = await _db.Products.CountAsync(),

@@ -39,6 +39,22 @@ namespace SmartStorageBackend.Controllers
 
             foreach (var scan in dto.ScanResults)
             {
+                // РџСЂРѕРІРµСЂСЏРµРј СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёРµ РїСЂРѕРґСѓРєС‚Р°
+                var product = await _db.Products.FindAsync(scan.ProductId);
+                if (product == null && !string.IsNullOrEmpty(scan.ProductName))
+                {
+                    // РЎРѕР·РґР°РµРј РЅРѕРІС‹Р№ РїСЂРѕРґСѓРєС‚ РµСЃР»Рё РµРіРѕ РЅРµС‚ Рё РµСЃС‚СЊ РёРјСЏ
+                    product = new Product
+                    {
+                        Id = scan.ProductId,
+                        Name = scan.ProductName,
+                        Category = "Auto-created",
+                        Min_stock = 10,
+                        Optimal_stock = 100
+                    };
+                    _db.Products.Add(product);
+                }
+
                 var entry = new InventoryHistory
                 {
                     RobotId = dto.RobotId,
@@ -55,7 +71,7 @@ namespace SmartStorageBackend.Controllers
 
             await _db.SaveChangesAsync();
 
-            // WEB SOCKET - Отправляем обновления всем подключённым клиентам
+            // WEB SOCKET - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             await _hub.Clients.All.SendAsync("robot_update", new
             {
                 dto.RobotId,
@@ -64,13 +80,13 @@ namespace SmartStorageBackend.Controllers
                 dto.Timestamp
             });
 
-            // WEB SOCKET - Отправляем обновления о критических продуктах
+            // WEB SOCKET - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (dto.ScanResults.Any(s => s.Status == "CRITICAL"))
             {
                 await _hub.Clients.All.SendAsync("inventory_alert", new
                 {
                     robot_id = dto.RobotId,
-                    message = "Критическое количество товара!",
+                    message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!",
                     time = DateTime.UtcNow
                 });
             }
