@@ -118,7 +118,7 @@ export const Dashboard = () => {
 
 			<div className="dashboard-content">
 				<div className="dashboard-left">
-					<WarehouseMap robots={data.robots} />
+					<WarehouseMap robots={data.robots} recentScans={data.recentScans} />
 				</div>
 
 				<div className="dashboard-right">
