@@ -82,7 +82,7 @@ export const Dashboard = () => {
 			const response = await dashboardApi.getCurrentData()
 			// console.log('response', response)
 			const processed = processDashboardData(response)
-			// console.log('processed', processed)
+			console.log('processed', processed)
 			setData(processed)
 		} catch (error) {
 			console.error('Failed to load dashboard data:', error)
