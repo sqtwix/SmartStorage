@@ -21,17 +21,19 @@ namespace SmartStorageBackend.Controllers
         [HttpPost("predict")]
         public async Task<IActionResult> Predict([FromBody] AiPredictRequest request)
         {
-            var responce = await _http.PostAsJsonAsync("http://localhost:8000/predict", request);
+            // Р’ Docker РёСЃРїРѕР»СЊР·СѓРµРј РёРјСЏ СЃРµСЂРІРёСЃР°, РІ Р»РѕРєР°Р»СЊРЅРѕР№ СЂР°Р·СЂР°Р±РѕС‚РєРµ - localhost
+            var aiModuleUrl = Environment.GetEnvironmentVariable("AI_MODULE_URL") ?? "http://ai-module:8000";
+            var responce = await _http.PostAsJsonAsync($"{aiModuleUrl}/predict", request);
 
             if (!responce.IsSuccessStatusCode) {
-                return StatusCode(500, "Ai сервис не работает!");
+                return StatusCode(500, "Ai пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
             }
 
             var result = await responce.Content.ReadFromJsonAsync<AiPredictResponse>();
 
             if (result == null)
             {
-                return StatusCode(500, "Ошибка при обработке ответа от AI сервиса");
+                return StatusCode(500, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ AI пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             }
 
             foreach (var p in result!.Predictions)

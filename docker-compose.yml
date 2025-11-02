@@ -25,6 +25,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: "http://+:5171"
+      AI_MODULE_URL: "http://ai-module:8000"
       ConnectionStrings__DefaultConnection: "Host=postgres;Database=smart_storage_db;Username=postgres;Password=123"
       Authentication__Enabled: "false"
       AI__Enabled: "false"
