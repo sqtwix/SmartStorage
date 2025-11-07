@@ -15,8 +15,8 @@ namespace SmartStorageBackend.Models
 
             [MaxLength(50)]
             public string? CurrentZone { get; set; }
-            public int CurrentRow { get; set; }
-            public int CurrentShelf { get; set; }
+            public int? CurrentRow { get; set; }
+            public int? CurrentShelf { get; set; }
 
             public DateTime LastUpdate { get; set; } = DateTime.UtcNow;
         
