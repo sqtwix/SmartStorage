@@ -1,5 +1,6 @@
 FROM node:18-alpine as build
 WORKDIR /app
+RUN npm install patch-package
 COPY package*.json ./
 RUN npm install
 COPY . .

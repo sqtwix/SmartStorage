@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS "Products" (
     "Id" VARCHAR(50) PRIMARY KEY, -- 'TEL-4567'
     "Name" VARCHAR(255) NOT NULL,
     "Category" VARCHAR(100),
-    "MinStock" INTEGER DEFAULT 10,
-    "OptimalStock" INTEGER DEFAULT 100
+    "min_stock" INTEGER DEFAULT 10,
+    "optimal_stock" INTEGER DEFAULT 100
 );
 
 -- История инвентаризации
@@ -57,3 +57,7 @@ CREATE TABLE IF NOT EXISTS "AiPredictions" (
 CREATE INDEX IF NOT EXISTS idx_inventory_scanned ON "InventoryHistory"("ScannedAt" DESC);
 CREATE INDEX IF NOT EXISTS idx_inventory_product ON "InventoryHistory"("ProductId");
 CREATE INDEX IF NOT EXISTS idx_inventory_zone ON "InventoryHistory"("Zone");
+
+INSERT INTO "Robots" ("Id", "Status", "BatteryLevel", "LastUpdate")
+VALUES ('manual_import', 'active', 100, NOW())
+ON CONFLICT ("Id") DO NOTHING;
