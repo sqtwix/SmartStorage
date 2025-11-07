@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartStorageBackend.Models
 {
@@ -15,7 +16,11 @@ namespace SmartStorageBackend.Models
         [MaxLength(100)]
         public string Category { get; set; }
 
+        [Column("min_stock")]
         public int Min_stock { get; set; } = 10;
+
+        [Column("optimal_stock")]
         public int Optimal_stock { get; set; } = 100;
+
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SmartStorageBackend;
@@ -11,9 +12,11 @@ using SmartStorageBackend;
 namespace SmartStorageBackend.Migrations
 {
     [DbContext(typeof(SmartStorageContext))]
-    partial class SmartStorageContextModelSnapshot : ModelSnapshot
+    [Migration("20251103141243_RenameColumnsToSnakeCase")]
+    partial class RenameColumnsToSnakeCase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,7 +132,7 @@ namespace SmartStorageBackend.Migrations
 
                     b.Property<int>("Min_stock")
                         .HasColumnType("integer")
-                        .HasColumnName("min_stock");
+                        .HasColumnName("Min_stock");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -138,7 +141,7 @@ namespace SmartStorageBackend.Migrations
 
                     b.Property<int>("Optimal_stock")
                         .HasColumnType("integer")
-                        .HasColumnName("optimal_stock");
+                        .HasColumnName("Optimal_stock");
 
                     b.HasKey("Id");
 

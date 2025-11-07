@@ -67,6 +67,24 @@ services:
     volumes:
       - ./py-scripts:/app/py-scripts
 
+  # НОВЫЙ КОНТЕЙНЕР ДЛЯ PYTHON СКРИПТА ROBOT.PY
+  robot-worker:
+    build: 
+      context: ./robot-worker
+      dockerfile: Dockerfile
+    environment:
+      PYTHONUNBUFFERED: 1
+      API_URL: "http://backend:5171"
+      ROBOT_SCRIPT: "robot.py"
+      UPDATE_INTERVAL: "30"
+      LOG_LEVEL: "INFO"
+    depends_on:
+      - backend
+    volumes:
+      - ./py-scripts:/app/scripts
+    restart: unless-stopped
+    profiles: ["background"]
+
   frontend:
     build: ./frontend
     environment:
